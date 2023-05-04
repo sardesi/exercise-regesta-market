@@ -1,6 +1,8 @@
 package com.regesta.exercise.regestamarket.service;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.regesta.exercise.regestamarket.dao.DiscountDao;
+import com.regesta.exercise.regestamarket.model.dto.PricedProduct;
 import com.regesta.exercise.regestamarket.model.entity.Discount;
 
 /**
@@ -48,5 +51,20 @@ public class DiscountService {
 	}
 	
 /* Custom methods */
+	
+	/**
+	 * Returns the list of all the discounts available on a specific date.
+	 * @param date The date to use while extracting the discounts. The format is yyyy/MM/dd.
+	 * @return The list of the active discounts.
+	 */
+	@Transactional
+	public List<Discount> getDiscountByDate(LocalDate date) {
+		
+		logger.debug("DiscountService | getDiscountByDate | START  | date: {}.", date);
+		
+		return dao.getDiscountByDate(date);
+		
+	}
+		
 	
 }

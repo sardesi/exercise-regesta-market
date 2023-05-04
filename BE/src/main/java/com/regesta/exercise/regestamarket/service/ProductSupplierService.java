@@ -1,6 +1,7 @@
 package com.regesta.exercise.regestamarket.service;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.regesta.exercise.regestamarket.dao.ProductSupplierDao;
+import com.regesta.exercise.regestamarket.model.dto.PricedProduct;
 import com.regesta.exercise.regestamarket.model.entity.ProductSupplier;
 import com.regesta.exercise.regestamarket.model.entity.ProductSupplierPK;
 
@@ -49,5 +51,21 @@ public class ProductSupplierService {
 	}
 	
 /* Custom methods */
+	
+	/**
+	 * Returns a paginated list of translated products. It can be ordered and filtered by name.
+	 * It starts from the product and not directly from the product dictionary so that if a product doesn't have a predefined translation is still visible but without any name, only the code.
+	 * @param request The body of the request, it contains the pagination info and the name filter.
+	 * @param language The language of the translated product. It's mandatory.
+	 * @return
+	 */
+	@Transactional
+	public List<PricedProduct> listPricedProducts(Integer productId) {
+		
+		logger.debug("ProductService | listPricedProducts | START  | productId: {}.", productId);
+		
+		return dao.listPricedProducts(productId);
+		
+	}
 	
 }

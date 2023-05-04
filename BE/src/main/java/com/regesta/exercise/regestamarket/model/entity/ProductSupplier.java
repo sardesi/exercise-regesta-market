@@ -26,7 +26,7 @@ public class ProductSupplier extends AbstractEntity {
 	@EmbeddedId
 	private ProductSupplierPK id;
 	
-	@Column(name = "CODE", nullable = false)
+	@Column(name = "PRICE", nullable = false)
 	private BigDecimal price;
 	
 	@Column(name = "AVAILABILITY", nullable = false)

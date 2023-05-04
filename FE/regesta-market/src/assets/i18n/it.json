@@ -1,0 +1,48 @@
+{
+    "BUTTONS": {
+        
+    },
+    "DIALOGS": {
+        "TITLES": {
+            
+        },
+        "MESSAGES": {
+            
+        }
+    },
+    "ERRORS": {
+        
+    },
+    "EXCEPTIONS": {
+        
+    },
+    "LABELS": {
+        "DROPDOWNS": {
+            
+        }
+    },
+    "MESSAGES": {
+        
+    },
+    "NOTIFICATIONS": {
+
+    },
+    "NAVBAR": {
+        
+    },
+    "SETTINGS": {
+        "APPLICATION_NAME": "RegestaMarket",
+        "DATE_FORMAT": "dd/MM/yyyy",
+        "DATETIME_FORMAT": "dd/MM/yyyy HH:mm",
+        "LOCALE" : "it"
+    },
+    "TABLES": {
+
+    },
+    "TOAST": {
+        "ERROR_TITLE": "Si è verificato un errore",
+        "INFO_TITLE": "Attenzione",
+        "SUCCESS_TITLE": "Operazione eseguita correttamente",
+        "WARNING_TITLE": "Attenzione!"
+    }
+}

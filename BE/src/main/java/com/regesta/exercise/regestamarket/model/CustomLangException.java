@@ -4,6 +4,7 @@ import com.regesta.exercise.regestamarket.constant.LangException;
 
 /**
  * A custom exception that accepts only a LangException enum for it's creation. Based on this enum code and the selected language the FE will then show the appropriate message.
+ * The stacktrace is removed for security reasons.
  * @author ars
  *
  */
@@ -21,5 +22,10 @@ public class CustomLangException extends RuntimeException {
 	public String getCode() {
 		return code;
 	}
+	
+	@Override
+    public synchronized Throwable fillInStackTrace() {
+        return this;
+    }
 	
 }

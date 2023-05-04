@@ -72,7 +72,12 @@ public class DaoConfig {
 		sessionFactory.setHibernateProperties(hibernateProperties);
 		
 		sessionFactory.setAnnotatedClasses(
-				com.regesta.exercise.regestamarket.model.entity.User.class
+				Discount.class,
+				Product.class,
+				ProductDictionary.class,
+				ProductSupplier.class,
+				Supplier.class,
+				User.class
 		);
 
 		return sessionFactory;

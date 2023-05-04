@@ -13,6 +13,16 @@ public class TranslatedProduct implements Serializable {
 
 	private String code;
 	private String description;
+	private Integer id;
 	private String name;
+	
+	public TranslatedProduct() { }
+	
+	public TranslatedProduct(Integer id, String code, String name, String description) {
+		this.id = id;
+		this.code = code;
+		this.name = name;
+		this.description = description;
+	}
 	
 }

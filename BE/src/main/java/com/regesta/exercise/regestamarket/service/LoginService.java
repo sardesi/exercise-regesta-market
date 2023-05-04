@@ -159,11 +159,11 @@ public class LoginService {
 	}
 
 // Per generare password in caso di inserimenti spot.
-	public static void main(String[] args) throws Exception {
-		
-		System.out.println(encryptPassword("password", "market.user@regestaitalia.it"));
-		System.out.println("6A482F18B0CA03EE2CCFBF080E35C883");
-		
-	}
+//	public static void main(String[] args) throws Exception {
+//		
+//		System.out.println(encryptPassword("password", "market.user@regestaitalia.it"));
+//		System.out.println("6A482F18B0CA03EE2CCFBF080E35C883");
+//		
+//	}
 
 }

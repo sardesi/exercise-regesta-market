@@ -23,7 +23,7 @@ public class ProductSupplierPK implements Serializable {
 	private Integer productId;
 	
 	@Column(name = "SUPPLIER_ID", unique = true, nullable = false)
-	private String supplierId;
+	private Integer supplierId;
 
 	@Override
 	public int hashCode() {

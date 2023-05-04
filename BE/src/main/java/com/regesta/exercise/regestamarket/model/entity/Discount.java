@@ -2,7 +2,7 @@ package com.regesta.exercise.regestamarket.model.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +15,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,17 +37,17 @@ public class Discount extends AbstractEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "SUPPLIER_ID", nullable = false)
 	private Supplier supplier;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_FROM", nullable = false)
-	private Date dateFrom;
+	private LocalDate dateFrom;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_TO", nullable = false)
-	private Date dateTo;
+	private LocalDate dateTo;
 
 	@Column(name = "PRICE_RANGE_FROM", nullable = true)
 	private BigDecimal priceRangeFrom;
@@ -58,6 +57,9 @@ public class Discount extends AbstractEntity {
 
 	@Column(name = "MIN_PIECE_DISCOUNT", nullable = true)
 	private Integer minPieceDiscount;
+
+	@Column(name = "PERCENTAGE", nullable = true)
+	private BigDecimal percentage;
 	
 	@Override
 	public Serializable getKey() {
