@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { forkJoin, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
+import { LocalStorageService } from '../services/local-storage.service';
+import { MessageService } from '../services/message-service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +24,7 @@ export class AuthGuard implements CanActivate {
       if(route.data.isLogin) {
         return of(true);
       }
-      this.messageService.error("EXCEPTIONS.UNAUTHORIZED");
+      //TODO: this.messageService.error("EXCEPTIONS.UNAUTHORIZED");
       this.router.navigate(['/login']);
       return of(false);
     }

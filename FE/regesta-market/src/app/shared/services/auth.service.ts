@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, } from 'rxjs';
+import { Observable, of, } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 import { ApiService } from './api.service';
 import { map, switchMap } from 'rxjs/operators';
@@ -9,9 +9,8 @@ import { MarketUser } from '../model/_interfaces';
 import { UserService } from './user.service';
 //import { NotificheService } from '../../notifiche/services/notifiche.service';
 
-const URL_CONTEXT = "/api/utente/context";
+const URL_CONTEXT = "/api/user/context";
 const URL_LOGIN = "/login/doLogin";
-const URL_LOGOUT = "/api/utente/doLogout";
 
 @Injectable({
   providedIn: 'root'
@@ -39,8 +38,6 @@ export class AuthService {
 
   public logout(doApiLogout: boolean = true) {
 
-    if(doApiLogout) this.apiService.authPost(URL_LOGOUT, null, null).subscribe();
-
     this.setCurrentUser(null);
     this.localStorageService.remove(LocalStorageService.STORAGE_JWT_TOKEN);
     this.router.navigate(['/login']);
@@ -49,12 +46,23 @@ export class AuthService {
 
   public context(): Observable<MarketUser> {
 
-    return this.apiService.authGet(URL_CONTEXT, null).pipe(
-      map( (user: MarketUser) => {
-        this.setCurrentUser(user);
-        return user;
-      })
-    );
+    return of({ 
+                id: 1,
+                mail: "simoneardesi@outlook.it", 
+                password: null,
+                name: "Simone",
+                surname: "Ardesi",
+                language: "IT"
+              });
+
+    // TODO: Riabilita una volta attivata security
+
+    // return this.apiService.authGet(URL_CONTEXT, null).pipe(
+    //   map( (user: MarketUser) => {
+    //     this.setCurrentUser(user);
+    //     return user;
+    //   })
+    // );
 
   }
 
@@ -83,7 +91,7 @@ export class AuthService {
       this.context().subscribe(response =>  {
 
         this.setCurrentUser(response);
-        this.localStorageService.set(LocalStorageService.STORAGE_LANGUAGE_KEY, response.lingua!);
+        this.localStorageService.set(LocalStorageService.STORAGE_LANGUAGE_KEY, response.language!);
 
         //this.notificheService.startNotificationsCount();
 

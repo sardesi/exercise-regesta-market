@@ -9,7 +9,6 @@ import {
 
 import { forkJoin, Observable, of, throwError } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { ToastrService} from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { EnvironmentService } from '../services/environment.service';
 import { LocalStorageService } from '../services/local-storage.service';
@@ -37,7 +36,6 @@ export class CustomHttpInterceptor implements HttpInterceptor {
     private authService:  AuthService,
     private messageService: MessageService,
     private router: Router,
-    private toastr: ToastrService,
 
   ) { }
 
@@ -69,7 +67,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
       // Server non raggiungibile.
         if (error.status === ERROR_STATUS_NO_CONNECTION) {
 
-          this.toastr.error("Il server non è momentanemaente raggiungibile. Riprovare più tardi.");
+          //TODO: this.toastr.error("Il server non è momentanemaente raggiungibile. Riprovare più tardi.");
           return throwError(error);
 
         }
@@ -83,17 +81,17 @@ export class CustomHttpInterceptor implements HttpInterceptor {
           if(enrichedRequest.url.startsWith(this.environmentService.apiUrl + API_LOGIN_LINK)) {
 
             if(error?.error?.reason) {
-              this.messageService.error("EXCEPTIONS." + error?.error?.reason[0])
+              //TODO: this.messageService.error("EXCEPTIONS." + error?.error?.reason[0])
             } else {
-              this.messageService.error("EXCEPTIONS.WRONG_CREDENTIALS");
+              //TODO: this.messageService.error("EXCEPTIONS.WRONG_CREDENTIALS");
             }
 
           } else {
 
             if(error?.headers?.get(RESPONSE_LANG_CODE_HEADER)) {
-              this.messageService.error("EXCEPTIONS." + error.headers.get(RESPONSE_LANG_CODE_HEADER));
+              //TODO: this.messageService.error("EXCEPTIONS." + error.headers.get(RESPONSE_LANG_CODE_HEADER));
             } else {
-              this.messageService.error("EXCEPTIONS.UNAUTHORIZED");
+              //TODO: this.messageService.error("EXCEPTIONS.UNAUTHORIZED");
             }
 
           }
@@ -106,7 +104,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
       // Eccezioni custom
         if(error.status === ERROR_STATUS_CUSTOM_LANG_EXCEPTION) {
           const errorCode = enrichedRequest.url.startsWith(this.environmentService.apiUrl + DOCUMENT_DOWNLOAD_LINK) ? error.error : error.error.code;
-          this.messageService.error("EXCEPTIONS." + errorCode);
+          //TODO: this.messageService.error("EXCEPTIONS." + errorCode);
           return throwError(error);
 
         }
@@ -120,7 +118,7 @@ export class CustomHttpInterceptor implements HttpInterceptor {
           errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
         }
 
-        this.messageService.error(`${errorMessage}`, undefined, false);
+        //TODO: this.messageService.error(`${errorMessage}`, undefined, false);
 
         return throwError(error);
 

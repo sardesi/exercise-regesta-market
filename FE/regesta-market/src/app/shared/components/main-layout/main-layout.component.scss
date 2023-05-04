@@ -1,0 +1,113 @@
+@import "../../../../assets/css/theme-variables.scss";
+
+.main-layout-container {
+
+    height: 100vh;
+    position: relative;
+
+    .main-layout-header {
+
+        box-shadow: $shadow-headbar;
+-webkit-box-shadow: $shadow-headbar;
+        position: fixed;
+        top: 0;
+        user-select: none;
+        width: 100%;
+        z-index: $z-index-headbar;
+
+        .mat-toolbar {
+            height: 50px;
+        }
+
+        .options-bar {
+
+            color: white;
+            display: flex;
+            position: absolute;
+            right: 16px;
+
+            .user-bar {
+
+                cursor: pointer;
+                display: flex;
+                font-size: .95rem;
+
+                .greeting-message {
+                    margin-right: 3px;
+                }
+
+                .dropdown-icon {
+                    position: relative;
+                    top: 3px
+                }
+
+            }
+
+        }
+
+    }
+
+    .spacer {
+        height: 50px;
+    }
+
+    .main-layout-content {
+        
+        display: flex;
+        height: calc(100% - 50px);
+        overflow-y: auto;
+
+        .sidebar {
+
+            background-color: $color-containers;
+            box-shadow: $shadow-sidebar;
+    -webkit-box-shadow: $shadow-sidebar;
+            height: calc(100% - 50px);
+            overflow-y: auto;
+            position: fixed;
+            width: 60px;
+            z-index: $z-index-sidebar;
+
+            .link-icon {
+
+                text-align: center;
+                transition: all 100ms ease-in-out;
+                user-select: none;
+                width: 100%;
+
+                &:first-of-type {
+                    margin-top: 8px;
+                }
+
+                &:hover {
+
+                    background-color: $color-primary;
+
+                    .icon {
+                        filter: invert(99%) sepia(0%) saturate(7204%) hue-rotate(300deg) brightness(121%) contrast(100%);
+                    }
+
+                }
+                
+                .icon {
+                    filter: $filter-icons-base-color;
+                    padding: 14px 0 8px 0;
+                    transition: all 100ms ease-in-out;
+                    width: 28px;
+                }
+
+            }
+
+        }
+
+        .outlet {
+
+            position: relative;
+            height: calc(100vh - 50px);
+            width: 100vw;
+
+        }
+
+    }
+
+}

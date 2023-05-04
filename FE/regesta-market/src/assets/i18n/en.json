@@ -1,5 +1,6 @@
 {
     "BUTTONS": {
+        "LOGIN": "LOGIN"
         
     },
     "DIALOGS": {
@@ -19,7 +20,9 @@
     "LABELS": {
         "DROPDOWNS": {
             
-        }
+        },
+        "MAIL": "Mail",
+        "PASSWORD": "Password"
     },
     "MESSAGES": {
         

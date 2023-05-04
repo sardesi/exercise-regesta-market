@@ -1,0 +1,21 @@
+<overlay-spinner></overlay-spinner>
+
+<div class="main-layout-container">
+
+    <div class="main-layout-header">
+
+        <!-- TOOLBAR -->
+
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="main-layout-content">
+        
+        <div class="outlet" [@translateLeftFader]="prepareOutlet(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+
+    </div>
+
+</div>

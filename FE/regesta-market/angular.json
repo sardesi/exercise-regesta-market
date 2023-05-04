@@ -24,7 +24,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/theme.scss",
+              "node_modules/primeicons/primeicons.css",
+              "src/assets/css/theme-primeng.css",
+              "node_modules/primeng-lts/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -61,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "regesta-market:build"
+            "browserTarget": "regesta-market:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

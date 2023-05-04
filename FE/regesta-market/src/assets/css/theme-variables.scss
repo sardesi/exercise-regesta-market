@@ -1,0 +1,34 @@
+// General
+
+$color-background: #F8F9FA;
+$color-background-light: #FCFCFC;
+$color-background-dark: #333333;
+$color-borders: #C5C5C5;
+$color-card-header-background: #F8F9FA;
+$color-containers: #FFFFFF;
+$color-containers-hover: #F1ECEE;
+$color-containers-selected: #FFEFF3;
+
+$color-disabled: #B1B1B1;
+$color-error: #FF0000;
+$color-primary: #DF5826;
+$color-primary-borders: #DF5826;
+$color-text: #000000;
+$color-text-disabled: #5C5C5C;
+$color-text-light: #A1A1A1;
+$color-text-hover: #9e9e9e;
+
+$filter-icons-base-color: none;
+
+$shadow-main-data-content: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+$shadow-headbar: 0 2px 4px 0px rgb(0 0 0 / 30%);
+$shadow-sidebar: 0 2px 4px 0px rgb(0 0 0 / 30%);
+
+$z-index-sidebar: 97;
+$z-index-headbar: 98;
+$z-index-menu-panels: 99;
+$z-index-overlay: 100;
+
+
+// Specific components
+$spinner-color-filter: invert(20%) sepia(100%) saturate(5158%) hue-rotate(336deg) brightness(97%) contrast(94%);

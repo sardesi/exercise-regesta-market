@@ -1,6 +1,6 @@
 {
     "BUTTONS": {
-        
+        "LOGIN": "ACCEDI"
     },
     "DIALOGS": {
         "TITLES": {
@@ -19,7 +19,9 @@
     "LABELS": {
         "DROPDOWNS": {
             
-        }
+        },
+        "MAIL": "Mail",
+        "PASSWORD": "Password"
     },
     "MESSAGES": {
         

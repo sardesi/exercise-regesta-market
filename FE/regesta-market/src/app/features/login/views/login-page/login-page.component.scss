@@ -1,0 +1,107 @@
+@import "../../../../../assets/css/theme-variables.scss";
+
+.login-component-container {
+    
+    display: flex;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+
+    .main-container {
+
+        margin: 0;
+        position: absolute;
+        top: 48%;
+        left: 50%;
+        text-align: center;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        .main-data-content {
+            
+            display: flex;
+            height: 500px;
+            padding: 0;
+            
+            .left-side {
+
+                background-color: $color-background-dark;
+                width: 40%;
+
+            }
+            
+            .right-side {
+
+                width: 60%;
+
+                .greeter {
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    margin: auto;
+                    margin-top: 50px;
+                    padding-left: 30px;
+                    text-align: left;
+                }
+
+                .insert-data-message {
+                    font-size: 1rem;
+                    margin-top: 5px;
+                    padding-left: 30px;
+                    text-align: left;
+                }
+
+                .login-form {
+
+                    margin-top: 30px;
+                    padding: 0px 30px;
+
+                    .buttons-container {
+
+                        display: flex;
+
+                        .remember-me {
+
+                            text-align: left;
+                            width: 50%;
+
+                            mat-checkbox {
+                                position: relative;
+                                top: 7px;
+                            }
+
+                        }
+
+                        .login-button {
+
+                            text-align: right;
+                            width: 50%;
+
+                            button {
+                                min-width: 150px;
+                                position: relative;
+                                right: -7px;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                .forgot-password {
+                    font-size: .85rem;
+                    margin-top: 10px;
+                }
+
+                .termini-condizioni {
+                    font-size: .85rem;
+                    margin-top: 20px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
