@@ -7,10 +7,10 @@ const routes: Routes = [
     path: 'login', 
     loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule),
   },
-  // {
-  //   path: 'products', 
-  //   loadChildren: () => import('./features/products/products.module').then(m => m.ProductsModule),
-  // },
+  {
+    path: 'product', 
+    loadChildren: () => import('./features/product/product.module').then(m => m.ProductModule),
+  },
   {
     path: '**',
     redirectTo: 'login'

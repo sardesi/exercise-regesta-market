@@ -4,6 +4,7 @@ import { MarketUser } from 'src/app/shared/model/_interfaces';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { LangService } from 'src/app/shared/services/lang-service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { ToastService } from 'src/app/shared/services/toast-service';
 
 @Component({
   selector: 'login-page',
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
     private localStorageService: LocalStorageService,
     private route: ActivatedRoute,
     private router: Router,
+    private toastService: ToastService,
   ) { }
 
   ngOnInit(): void {
@@ -37,18 +39,15 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
-    
+
     this.loading = true;
     let authObservable = this.authService.initUser(this.user.mail!, this.user.password!, this.rememberMe);
 
     authObservable.subscribe(
       user => {
         this.loading = false;
-        this.langService.setLanguage(user.language!);
+        this.langService.setLanguage(user.language!, false);
         this.router.navigate(['/product']);
-      },
-      error => {
-        this.loading = false;
       }
     );
 

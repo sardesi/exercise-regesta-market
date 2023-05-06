@@ -1,16 +1,39 @@
 <overlay-spinner></overlay-spinner>
+<p-toast position="bottom-center"></p-toast>
 
 <div class="main-layout-container">
 
-    <div class="main-layout-header">
+    <div class="main-layout-header" *ngIf="showBars()">
+        
+        <div class="head">
+            <div class="logo"> <img src="assets/images/header_logo.png" width="150px" [class.clickable]="showBars()" (click)="logoClick()"/> </div>
+            <p-avatar [label]="userService.getUserInitials()" styleClass="avatar clickable" shape="circle" (click)="userOverlay.toggle($event)"></p-avatar>
+        </div>
 
-        <!-- TOOLBAR -->
+        <div class="spacer">
+            <a href="https://github.com/sardesi/exercise-regesta-market/tree/main" target="_blank"> 
+                <i class="pi pi-github clickable" [pTooltip]="'TOOLTIPS.GITHUB' | translate" 
+                   tooltipPosition="left" showDelay="300"></i>
+            </a>
+        </div>
+
+        <p-overlayPanel #userOverlay styleClass="userOverlay">
+            <ng-template pTemplate>
+                <div class="user">
+                    <p-avatar [label]="userService.getUserInitials()" styleClass="avatar" shape="circle"></p-avatar>
+                    <div class="user-info">
+                        <div class="name">{{ userService.getFullName() }}</div>
+                        <div class="mail">{{ userService.getMail() }}</div>
+                    </div>
+                </div>
+                <div class="clickable-text" (click)="changeLanguage()"><span><i class="pi pi-globe"></i>{{ 'LABELS.CHANGE_LANGUAGE' | translate }}</span></div>
+                <div class="clickable-text" (click)="logout()"><span>{{ 'LABELS.LOGOUT' | translate }}</span></div>
+            </ng-template>
+        </p-overlayPanel>
 
     </div>
 
-    <div class="spacer"></div>
-
-    <div class="main-layout-content">
+    <div class="main-layout-content" [class.logged]="showBars">
         
         <div class="outlet" [@translateLeftFader]="prepareOutlet(outlet)">
             <router-outlet #outlet="outlet"></router-outlet>

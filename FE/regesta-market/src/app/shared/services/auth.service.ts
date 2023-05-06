@@ -4,7 +4,7 @@ import { LocalStorageService } from './local-storage.service';
 import { ApiService } from './api.service';
 import { map, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { MessageService } from './message-service';
+import { ToastService } from './toast-service';
 import { MarketUser } from '../model/_interfaces';
 import { UserService } from './user.service';
 //import { NotificheService } from '../../notifiche/services/notifiche.service';
@@ -20,7 +20,6 @@ export class AuthService {
   constructor(
     private apiService: ApiService,
     private localStorageService: LocalStorageService,
-    private messageService: MessageService,
     private router: Router,
     private userService: UserService,
   ) { }
@@ -46,14 +45,18 @@ export class AuthService {
 
   public context(): Observable<MarketUser> {
 
-    return of({ 
-                id: 1,
-                mail: "simoneardesi@outlook.it", 
-                password: null,
-                name: "Simone",
-                surname: "Ardesi",
-                language: "IT"
-              });
+    let user = { 
+      id: 1,
+      mail: "simoneardesi@outlook.it", 
+      password: null,
+      name: "Simone",
+      surname: "Ardesi",
+      language: "IT"
+    };
+
+    this.setCurrentUser(user);
+
+    return of(user);
 
     // TODO: Riabilita una volta attivata security
 

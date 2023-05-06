@@ -33,8 +33,16 @@ export class UserService {
     return this.currentUser?.name;
   }
 
+  public getFullName() {
+    return this.currentUser?.name + this.currentUser?.surname;
+  }
+
   public getUserInitials() {
     return this.currentUser?.name?.charAt(0)! + this.currentUser?.surname?.charAt(0)!;
+  }
+
+  public getMail() {
+    return this.currentUser?.mail;
   }
 
 }

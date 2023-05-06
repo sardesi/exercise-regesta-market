@@ -9,7 +9,7 @@ import {
 import { Observable } from 'rxjs';
 import { LoaderService } from '../services/loader.service';
 
-const NO_LOADER_HEADER = "smartworker_no_loader";
+const NO_LOADER_HEADER = "regesta_market_no_loader";
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {

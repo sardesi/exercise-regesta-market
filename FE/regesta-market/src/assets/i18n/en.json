@@ -1,7 +1,8 @@
 {
     "BUTTONS": {
-        "LOGIN": "LOGIN"
-        
+        "COMPARE": "COMPARE",
+        "LOGIN": "LOGIN",
+        "SEARCH": "SEARCH"
     },
     "DIALOGS": {
         "TITLES": {
@@ -11,21 +12,34 @@
             
         }
     },
+    "DROPDOWNS": {
+        "PRODUCT_FILTER": {
+            "CODE": "Code",
+            "NAME": "Name"
+        }
+    },
     "ERRORS": {
         
     },
     "EXCEPTIONS": {
-        
+        "UNAUTHORIZED": "The user is not authorized to perform this operation.",
+        "UNKNOWN_LANGUAGE": "Language not found.",
+        "WRONG_CREDENTIALS": "There are no users matching the specified credentials."
     },
     "LABELS": {
-        "DROPDOWNS": {
-            
-        },
+        "CHANGE_LANGUAGE": "Cambia lingua in italiano",
+        "LOGOUT": "Logout",
         "MAIL": "Mail",
-        "PASSWORD": "Password"
+        "PASSWORD": "Password",
+        "PRODUCT_CODE": "Product code",
+        "PRODUCT_NAME": "Product name",
+        "PRODUCTS": "products",
+        "REMEMBER_ME": "Remember me",
+        "SORT": "Sort",
+        "TOTAL_RECORDS": "products found"
     },
     "MESSAGES": {
-        
+        "NO_PRODUCTS": "No results found, please try to broaden the search criteria."
     },
     "NOTIFICATIONS": {
 
@@ -47,5 +61,8 @@
         "INFO_TITLE": "Attenzione",
         "SUCCESS_TITLE": "Operazione eseguita correttamente",
         "WARNING_TITLE": "Attenzione!"
+    },
+    "TOOLTIPS": {
+        "GITHUB": "View on GitHub"
     }
 }

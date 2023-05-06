@@ -4,7 +4,7 @@ import { LocalStorageService } from './local-storage.service';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './user.service';
 
-const DEFAULT_LANGUAGE: string = "it";
+const DEFAULT_LANGUAGE: string = "IT";
 const LANG_CHANGE_API_URL: string = "/api/utente/cambiaLingua";
 
 @Injectable({
@@ -30,15 +30,19 @@ export class LangService {
         this.translateService.setDefaultLang( lastUsedLang ? lastUsedLang : DEFAULT_LANGUAGE );
     }
 
-    public setLanguage( languageId: string ) {
+    public setLanguage(languageId: string, reload: boolean = true) {
         this.localStorageService.set(LocalStorageService.STORAGE_LANGUAGE_KEY, languageId);
         this.translateService.use(languageId);
         this.currentLang = languageId;
-        window.location.reload();
+        if(reload) window.location.reload();
     }
 
     public getCurrentLanguage(): string {
         return this.currentLang;
+    }
+
+    public switchLanguage() {
+        this.setLanguage(this.currentLang == 'IT' ? 'EN' : 'IT');
     }
 
     public changeLanguage(langId: string) {

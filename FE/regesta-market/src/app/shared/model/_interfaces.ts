@@ -20,3 +20,29 @@ export interface MarketUser {
 	surname?: string;
 	language?: string;
 }
+
+export interface Pagination {
+    desc?: boolean;
+	limit: number;
+	order?: string;
+	offset: number;
+	totalRecords?: number;
+}
+
+export interface ProductsListRequest {
+    code?: string;
+    name?: string;
+    pagination: Pagination;
+}
+
+export interface ListResponse<T> {
+    pagination: Pagination;
+	results: T[];
+}
+
+export interface TranslatedProduct {
+    code: string;
+	description?: string;
+	id: number;
+	name: string;
+}

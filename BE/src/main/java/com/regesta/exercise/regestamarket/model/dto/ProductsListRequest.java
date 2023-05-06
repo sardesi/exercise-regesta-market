@@ -39,9 +39,12 @@ public class ProductsListRequest implements Serializable {
 	public void check(String language) throws CustomLangException {
 		if(StringUtils.isEmpty(language)) throw new CustomLangException(LangException.MISSING_LANGUAGE);
 		if(!EnumUtils.isValidEnum(Language.class, language)) throw new CustomLangException(LangException.UNKNOWN_LANGUAGE);
-		if(pagination != null && !StringUtils.isEmpty(pagination.getOrder())) {
-			if(!EnumUtils.isValidEnum(ProductsListRequestOrder.class, pagination.getOrder())) throw new CustomLangException(LangException.UNKNOWN_ORDER);
-			pagination.setOrder(ProductsListRequestOrder.valueOf(pagination.getOrder()).getMessage());
+		if(pagination != null) {
+			pagination.setFieldOrder(null);
+			if(!StringUtils.isEmpty(pagination.getOrder())) {
+				if(!EnumUtils.isValidEnum(ProductsListRequestOrder.class, pagination.getOrder())) throw new CustomLangException(LangException.UNKNOWN_ORDER);
+				pagination.setFieldOrder(ProductsListRequestOrder.valueOf(pagination.getOrder()).getMessage());
+			}
 		}
 	}
 	

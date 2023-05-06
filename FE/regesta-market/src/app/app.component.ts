@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EnvironmentService } from './shared/services/environment.service';
+import { PrimeNGConfig } from 'primeng-lts/api';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,10 @@ export class AppComponent {
 
   constructor(
     private environmentService: EnvironmentService,
-  ) { }
+    private primengConfig: PrimeNGConfig,
+  ) { 
+    primengConfig.ripple = true;
+  }
 
   public apiUrl = this.environmentService.apiUrl;
   

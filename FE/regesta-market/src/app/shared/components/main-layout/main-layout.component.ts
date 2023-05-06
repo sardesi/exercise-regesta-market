@@ -4,6 +4,7 @@ import { fader } from '../../animations/animations';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { LangService } from '../../services/lang-service';
+import { MenuItem } from 'primeng-lts/api';
 
 
 @Component({
@@ -13,9 +14,6 @@ import { LangService } from '../../services/lang-service';
   animations: [ fader ]
 })
 export class MainLayoutComponent implements OnInit {
-
-  linguaggi = LangService.LANG_LIST;
-  userMenuOpen: boolean = false;
 
   constructor(
     public authService: AuthService,
@@ -34,8 +32,8 @@ export class MainLayoutComponent implements OnInit {
     this.authService.logout();
   }
 
-  showSidebar() {
-    return this.userService.isLogged(); //TODO: aggiungere condizione aggiuntiva per far apparire solo dopo che la pagina principale si è caricata...
+  showBars() {
+    return this.userService.isLogged();
   }
 
   changeLang(langId: string) {
@@ -43,7 +41,11 @@ export class MainLayoutComponent implements OnInit {
   }
 
   logoClick(){
-    if(this.userService.isLogged()) this.router.navigate(['/products']);
+    if(this.userService.isLogged()) this.router.navigate(['/product']);
+  }
+
+  changeLanguage() {
+    this.langService.switchLanguage();
   }
 
 }

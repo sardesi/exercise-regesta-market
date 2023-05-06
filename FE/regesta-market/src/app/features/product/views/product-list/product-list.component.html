@@ -1,0 +1,64 @@
+<div class="product-list-component-container">
+
+  <div class="filters">
+
+    <div class="filter">
+        <div class="input-label">{{ 'LABELS.PRODUCT_NAME' | translate }}:</div>
+        <input class="p-inputtext-sm" type="text" pInputText [(ngModel)]="filters.name"/>
+    </div>
+
+    <div class="filter">
+        <div class="input-label">{{ 'LABELS.PRODUCT_CODE' | translate }}:</div>
+        <input class="p-inputtext-sm" type="text" pInputText [(ngModel)]="filters.code"/>
+    </div>
+
+    <div class="filter-button">
+        <p-button styleClass="p-button-sm" icon="pi pi-filter" iconPos="right" [label]="'BUTTONS.SEARCH' | translate"
+                  (click)="searchProducts()"></p-button>
+    </div>
+
+  </div>
+
+  <div class="list" [@elementsFader]="faderTrigger">
+
+    <div class="list-header">
+
+        <div class="order">
+            <div class="input-label">{{ "LABELS.SORT" | translate }}</div>
+            <p-dropdown class="p-inputtext-sm" [options]="availableOrders" [(ngModel)]="order" optionLabel="name"
+                        (onChange)="changeOrder()"></p-dropdown>
+        </div>
+
+        <div class="total-results"><span>{{ pagination.totalRecords }}</span> {{ "LABELS.TOTAL_RECORDS" | translate }}</div>
+
+    </div>
+
+    <div class="list-content"  *ngIf="pagination.totalRecords > 0; else noProducts">
+
+        <div class="product" *ngFor="let product of products">
+            <div class="image" (click)="openDetail(product)"><img src="https://m.media-amazon.com/images/I/71Dt2VXgxGL._AC_UL600_FMwebp_QL65_.jpg"/></div>
+            <div class="name">{{ product.name }}</div>
+            <div class="code">#{{ product.code }}</div>
+            <div class="animated-button" (click)="openDetail(product)"> <span> {{ 'BUTTONS.COMPARE' | translate }} </span> </div>
+        </div>
+
+        <!-- Necessari per sistemare l'ultima riga del flexbox -->
+        <div class="filler"></div>
+        <div class="filler"></div>
+
+    </div>
+
+    <ng-template #noProducts>
+        <div class="no-products-container">
+            <div class="no-products">
+                <i class="pi pi-filter-slash"></i>
+                <div>{{ 'MESSAGES.NO_PRODUCTS' | translate }}</div>
+            </div>
+        </div>
+    </ng-template>
+
+  </div>
+
+</div>
+
+  

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from '../services/local-storage.service';
 import { AuthService } from '../services/auth.service';
-import { MessageService } from '../services/message-service';
+import { ToastService } from '../services/toast-service';
 import { UserService } from '../services/user.service';
 import { AuthGuard } from './auth.guard';
 
@@ -16,11 +16,11 @@ export class FirstAccessGuard extends AuthGuard implements CanActivate {
   constructor(
     protected authService: AuthService,
     protected localStorageService: LocalStorageService,
-    protected messageService: MessageService,
+    protected toastService: ToastService,
     protected router: Router,
     private userService: UserService
   ) {
-    super(authService, localStorageService, messageService, router);
+    super(authService, localStorageService, toastService, router);
   }  
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {

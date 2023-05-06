@@ -13,8 +13,9 @@ public class Pagination implements Serializable {
 	
 	private boolean desc;
 	private Integer limit;
+	private String fieldOrder;
 	private String order;
 	private Integer offset;
-	private Integer totalRecords;
+	private Long totalRecords;
 	
 }

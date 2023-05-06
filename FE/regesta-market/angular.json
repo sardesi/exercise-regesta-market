@@ -25,10 +25,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/theme.scss",
               "node_modules/primeicons/primeicons.css",
               "src/assets/css/theme-primeng.css",
-              "node_modules/primeng-lts/resources/primeng.min.css"
+              "node_modules/primeng-lts/resources/primeng.min.css",
+              "src/assets/css/theme.scss"
             ],
             "scripts": []
           },

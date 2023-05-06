@@ -68,6 +68,8 @@ public class ProductService {
 		
 		ListResponse<TranslatedProduct> results = new ListResponse<>();
 		results.setResults(dao.listTranslatedProducts(request, language));
+		results.setPagination(request.getPagination());
+		results.getPagination().setTotalRecords(dao.countTranslatedProducts(request, language));
 		
 		return results;
 		

@@ -14,6 +14,7 @@ import { LoaderInterceptor } from './shared/interceptors/loader.service';
 import { LoaderService } from './shared/services/loader.service';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng-lts/api';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        //useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/smartworkplace/fe/assets/i18n/'),
+        //useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/regesta-market/fe/assets/i18n/'),
         useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
         deps: [HttpClient]
       },
@@ -39,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     LoaderService,
+    MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptor, multi: true },
     { provide: LOCALE_ID, useValue: 'it-IT'},

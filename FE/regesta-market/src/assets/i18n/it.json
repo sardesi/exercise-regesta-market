@@ -1,6 +1,8 @@
 {
     "BUTTONS": {
-        "LOGIN": "ACCEDI"
+        "COMPARE": "CONFRONTA",
+        "LOGIN": "ACCEDI",
+        "SEARCH": "FILTRA"
     },
     "DIALOGS": {
         "TITLES": {
@@ -10,21 +12,34 @@
             
         }
     },
+    "DROPDOWNS": {
+        "PRODUCT_FILTER": {
+            "CODE": "Codice",
+            "NAME": "Nome"
+        }
+    },
     "ERRORS": {
         
     },
     "EXCEPTIONS": {
-        
+        "UNAUTHORIZED": "L'utente non è autorizzato ad eseguire l'operazione.",
+        "UNKNOWN_LANGUAGE": "Lingua non riconosciuta.",
+        "WRONG_CREDENTIALS": "Le credenziali inserite risultano errate."
     },
     "LABELS": {
-        "DROPDOWNS": {
-            
-        },
+        "CHANGE_LANGUAGE": "Change language to english",
+        "LOGOUT": "Esci",
         "MAIL": "Mail",
-        "PASSWORD": "Password"
+        "PASSWORD": "Password",
+        "PRODUCT_CODE": "Codice del prodotto",
+        "PRODUCT_NAME": "Nome del prodotto",
+        "PRODUCTS": "prodotti",
+        "REMEMBER_ME": "Ricordami",
+        "SORT": "Ordinamento",
+        "TOTAL_RECORDS": "prodotti trovati"
     },
     "MESSAGES": {
-        
+        "NO_PRODUCTS": "Nessun prodotto recuperato, prova ad ampliare i criteri di ricerca."
     },
     "NOTIFICATIONS": {
 
@@ -46,5 +61,8 @@
         "INFO_TITLE": "Attenzione",
         "SUCCESS_TITLE": "Operazione eseguita correttamente",
         "WARNING_TITLE": "Attenzione!"
+    },
+    "TOOLTIPS": {
+        "GITHUB": "Visualizza su GitHub"
     }
 }

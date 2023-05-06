@@ -4,7 +4,7 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { LocalStorageService } from '../services/local-storage.service';
-import { MessageService } from '../services/message-service';
+import { ToastService } from '../services/toast-service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     protected authService: AuthService,
     protected localStorageService: LocalStorageService,
-    protected messageService: MessageService,
+    protected toastService: ToastService,
     protected router: Router,
   ) {}
 
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
       if(route.data.isLogin) {
         return of(true);
       }
-      //TODO: this.messageService.error("EXCEPTIONS.UNAUTHORIZED");
+      this.toastService.error("EXCEPTIONS.UNAUTHORIZED");
       this.router.navigate(['/login']);
       return of(false);
     }

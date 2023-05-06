@@ -37,8 +37,8 @@ public class ProductDao extends AbstractDao<Product> implements EntityDao<Produc
 			queryString += " AND LOWER(pd.name) LIKE(:name)";
 		}
 		
-		if(request.getPagination() != null && !StringUtils.isEmpty(request.getPagination().getOrder())) {
-			queryString += " ORDER BY " + request.getPagination().getOrder();
+		if(request.getPagination() != null && !StringUtils.isEmpty(request.getPagination().getFieldOrder())) {
+			queryString += " ORDER BY " + request.getPagination().getFieldOrder();
 			if(request.getPagination().isDesc()) queryString += " DESC";
 		}
 		
@@ -58,6 +58,36 @@ public class ProductDao extends AbstractDao<Product> implements EntityDao<Produc
 		}
 		
 		return query.list();
+		
+	}
+
+	public Long countTranslatedProducts(ProductsListRequest request, String language) {
+		
+		Session session = null;
+			
+		session = takeSession();
+		String queryString = "SELECT COUNT(p)"
+						   + " FROM Product p LEFT OUTER JOIN ProductDictionary pd ON p.id = pd.product.id AND (pd.language = :language OR pd.language IS NULL)"
+						   + " WHERE 1=1";
+		
+		if(!StringUtils.isEmpty(request.getCode())) {
+			queryString += " AND LOWER(p.code) LIKE(:code)";
+		}
+		if(!StringUtils.isEmpty(request.getName())) {
+			queryString += " AND LOWER(pd.name) LIKE(:name)";
+		}
+		
+		Query<Long> query = session.createQuery(queryString, Long.class);
+		query.setParameter("language", language);
+
+		if(!StringUtils.isEmpty(request.getCode())) {
+			query.setParameter("code", "%" + request.getCode().toLowerCase() + "%");
+		}
+		if(!StringUtils.isEmpty(request.getName())) {
+			query.setParameter("name", "%" + request.getName().toLowerCase() + "%");
+		}
+		
+		return query.getSingleResult();
 		
 	}
 	

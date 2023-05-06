@@ -14,21 +14,21 @@
 
           <div class="login-form" (keyup.enter)="doLogin();">
 
-            <div class="p-field" style="margin-bottom: 20px;">
+            <div class="p-field p-input-icon-right">
               <label for="mail">{{ "LABELS.MAIL" | translate }}</label>
-              <input id="mail" type="text" pInputText [(ngModel)]="user.mail">
-              <small id="mail-help">Enter your username to reset your password.</small>
+              <i class="pi pi-user"></i>
+              <input id="mail" type="text" pInputText class="p-inputtext-sm" placeholder="Mail" [(ngModel)]="user.mail">
             </div>
 
             <div class="p-field" style="margin-bottom: 20px">
               <label for="password">{{ "LABELS.PASSWORD" | translate }}</label>
-              <p-password id="password" [(ngModel)]="user.password" [toggleMask]="true" [feedback]="false"></p-password>
+              <p-password id="password" class="p-inputtext-sm" placeholder="Password" [(ngModel)]="user.password" [toggleMask]="true" [feedback]="false"></p-password>
             </div>
 
             <div class="buttons-container">
               <div class="remember-me p-field-checkbox">
                 <p-checkbox binary="true" [(ngModel)]="rememberMe"></p-checkbox>
-                <label for="binary">{{ 'LABELS.RICORDAMI' | translate }}</label>
+                <label for="binary">{{ 'LABELS.REMEMBER_ME' | translate }}</label>
               </div>
               <div class="login-button">
                 <div class="animated-button clickable" (click)="doLogin()"> <span> {{ 'BUTTONS.LOGIN' | translate }} </span> </div>

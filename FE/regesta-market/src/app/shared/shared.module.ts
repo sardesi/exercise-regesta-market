@@ -7,11 +7,20 @@ import { RouterModule } from '@angular/router';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { OverlaySpinnerComponent } from './components/overlay-spinner/overlay-spinner.component';
+
+import { AvatarModule } from 'primeng-lts/avatar';
 import { ButtonModule } from 'primeng-lts/button';
+import { CardModule } from 'primeng-lts/card';
 import { CheckboxModule } from 'primeng-lts/checkbox';
+import { DropdownModule } from 'primeng-lts/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { MenuModule } from 'primeng-lts/menu';
+import { OverlayPanelModule } from 'primeng-lts/overlaypanel';
 import { PasswordModule } from 'primeng-lts/password';
+import { ProgressSpinnerModule } from 'primeng-lts/progressspinner';
 import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng-lts/toast';
+import { TooltipModule } from 'primeng-lts/tooltip';
 
 @NgModule({
   declarations: [
@@ -27,11 +36,19 @@ import { RippleModule } from 'primeng/ripple';
     RouterModule,
     TranslateModule,
 
+    AvatarModule,
     ButtonModule,
+    CardModule,
     CheckboxModule,
+    DropdownModule,
     InputTextModule,
+    MenuModule,
+    OverlayPanelModule,
     PasswordModule,
+    ProgressSpinnerModule,
     RippleModule,
+    ToastModule,
+    TooltipModule,
   ],
   exports: [
     CommonModule,
@@ -41,11 +58,19 @@ import { RippleModule } from 'primeng/ripple';
     ReactiveFormsModule,
     TranslateModule,
 
+    AvatarModule,
     ButtonModule,
+    CardModule,
     CheckboxModule,
+    DropdownModule,
     InputTextModule,
+    MenuModule,
+    OverlayPanelModule,
     PasswordModule,
+    ProgressSpinnerModule,
     RippleModule,
+    ToastModule,
+    TooltipModule,
 
     MainLayoutComponent,
     OverlaySpinnerComponent,

@@ -1043,8 +1043,8 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
   border-color: #B00020;
 }
 .p-inputtext.p-inputtext-sm {
-  font-size: 0.875rem;
-  padding: 0.875rem 0.875rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.5rem;
 }
 .p-inputtext.p-inputtext-lg {
   font-size: 1.25rem;
@@ -1110,8 +1110,8 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 }
 
 .p-inputtext-sm .p-inputtext {
-  font-size: 0.875rem;
-  padding: 0.875rem 0.875rem;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.5rem;
 }
 
 .p-inputtext-lg .p-inputtext {
@@ -1664,12 +1664,12 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   border-radius: 4px;
 }
 .p-button:enabled:hover {
-  background: rgba(63, 81, 181, 0.92);
+  background: #d34d1d;
   color: #ffffff;
   border-color: transparent;
 }
 .p-button:enabled:active {
-  background: rgba(63, 81, 181, 0.68);
+  background: #DF5826;
   color: #ffffff;
   border-color: transparent;
 }
@@ -1679,12 +1679,12 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   border: 1px solid;
 }
 .p-button.p-button-outlined:enabled:hover {
-  background: rgba(63, 81, 181, 0.04);
+  background: #DF5826;
   color: #DF5826;
   border: 1px solid;
 }
 .p-button.p-button-outlined:enabled:active {
-  background: rgba(63, 81, 181, 0.16);
+  background: #DF5826;
   color: #DF5826;
   border: 1px solid;
 }
@@ -1706,12 +1706,12 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   border-color: transparent;
 }
 .p-button.p-button-text:enabled:hover {
-  background: rgba(63, 81, 181, 0.04);
+  background: #DF5826;
   color: #DF5826;
   border-color: transparent;
 }
 .p-button.p-button-text:enabled:active {
-  background: rgba(63, 81, 181, 0.16);
+  background: #DF5826;
   color: #DF5826;
   border-color: transparent;
 }
@@ -6560,3 +6560,12 @@ p-multiselect.ng-dirty.ng-invalid .p-multiselect:not(.p-disabled).p-focus {
 }
 
 /* Customizations to the designer theme should be defined here */
+.p-button:focus {
+  background: rgb(218, 104, 62) !important;
+}
+
+p-dropdown.p-inputtext-sm li.p-dropdown-item {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}

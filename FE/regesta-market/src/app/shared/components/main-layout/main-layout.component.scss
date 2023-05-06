@@ -7,104 +7,133 @@
 
     .main-layout-header {
 
-        box-shadow: $shadow-headbar;
--webkit-box-shadow: $shadow-headbar;
-        position: fixed;
-        top: 0;
-        user-select: none;
-        width: 100%;
-        z-index: $z-index-headbar;
+        .head {
 
-        .mat-toolbar {
-            height: 50px;
-        }
-
-        .options-bar {
-
-            color: white;
+            height: 55px;
+            position: relative;
             display: flex;
-            position: absolute;
-            right: 16px;
+            
+            .logo {
+                flex-grow: 1;
+                padding: 7px 0 1px 8px;
+            }
 
-            .user-bar {
+            ::ng-deep {
 
-                cursor: pointer;
-                display: flex;
-                font-size: .95rem;
-
-                .greeting-message {
-                    margin-right: 3px;
-                }
-
-                .dropdown-icon {
+                .avatar {
+                    background-color: $color-background-dark;
+                    color: #ffffff;
+                    font-size: 1.2rem;
                     position: relative;
-                    top: 3px
+                    height: 2.5rem;
+                    right: 7px;
+                    top: 8px;
+                    width: 2.5rem;
                 }
 
             }
 
         }
 
-    }
+        .spacer {
 
-    .spacer {
-        height: 50px;
+            background-color: $color-background-dark;
+            height: 40px;
+            text-align: right;
+
+            .pi {
+                color: #FFFFFF;
+                font-size: 26px;
+                margin-right: 13px;
+                position: relative;
+                top: 7px;
+            }
+
+        }
+
     }
 
     .main-layout-content {
         
         display: flex;
-        height: calc(100% - 50px);
+        height: 100%;
         overflow-y: auto;
 
-        .sidebar {
-
-            background-color: $color-containers;
-            box-shadow: $shadow-sidebar;
-    -webkit-box-shadow: $shadow-sidebar;
-            height: calc(100% - 50px);
-            overflow-y: auto;
-            position: fixed;
-            width: 60px;
-            z-index: $z-index-sidebar;
-
-            .link-icon {
-
-                text-align: center;
-                transition: all 100ms ease-in-out;
-                user-select: none;
-                width: 100%;
-
-                &:first-of-type {
-                    margin-top: 8px;
-                }
-
-                &:hover {
-
-                    background-color: $color-primary;
-
-                    .icon {
-                        filter: invert(99%) sepia(0%) saturate(7204%) hue-rotate(300deg) brightness(121%) contrast(100%);
-                    }
-
-                }
-                
-                .icon {
-                    filter: $filter-icons-base-color;
-                    padding: 14px 0 8px 0;
-                    transition: all 100ms ease-in-out;
-                    width: 28px;
-                }
-
-            }
-
+        &.logged {
+            height: calc(100% - 95px);
         }
 
         .outlet {
 
+            height: 100%;
+            margin: auto;
+            max-width: 1200px;
             position: relative;
-            height: calc(100vh - 50px);
             width: 100vw;
+
+        }
+
+    }
+
+}
+
+::ng-deep {
+
+    .userOverlay {
+
+        .p-overlaypanel-content {
+
+            padding: 16px;
+            
+            .user {
+
+                display: flex;
+                gap: 6px;
+
+                .avatar {
+                    background-color: $color-background-dark;
+                    color: #ffffff;
+                    font-size: 1.2rem;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+
+                .user-info {
+
+                    margin-bottom: 14px;
+                    position: relative;
+                    top: 3px;
+
+                    .name {
+                        color: $color-text;
+                        font-size: .9rem;
+                    }
+    
+                    .mail {
+                        color: $color-text-light;
+                        font-size: .75rem;
+                    }
+                    
+                }
+
+            }
+
+            .clickable-text {
+
+                color: #0000CC;
+                cursor: pointer;
+                font-size: .8rem;
+                margin-bottom: 3px;
+                text-decoration: underline;
+                text-align: right;
+
+                .pi {
+                    position: relative;
+                    right: 2px;
+                    top: 2px;
+                }
+
+            }
 
         }
 
