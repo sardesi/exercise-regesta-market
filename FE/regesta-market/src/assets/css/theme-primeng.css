@@ -1680,12 +1680,12 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 }
 .p-button.p-button-outlined:enabled:hover {
   background: #DF5826;
-  color: #DF5826;
+  color: #FFFFFF;
   border: 1px solid;
 }
 .p-button.p-button-outlined:enabled:active {
   background: #DF5826;
-  color: #DF5826;
+  color: #FFFFFF;
   border: 1px solid;
 }
 .p-button.p-button-outlined.p-button-plain {
@@ -1707,7 +1707,7 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
 }
 .p-button.p-button-text:enabled:hover {
   background: #DF5826;
-  color: #DF5826;
+  color: #FFFFFF;
   border-color: transparent;
 }
 .p-button.p-button-text:enabled:active {
@@ -6564,8 +6564,28 @@ p-multiselect.ng-dirty.ng-invalid .p-multiselect:not(.p-disabled).p-focus {
   background: rgb(218, 104, 62) !important;
 }
 
+.p-button-outlined:focus {
+  background: transparent !important;
+  color: #DF5826 !important;
+}
+
+.p-button-outlined:hover {
+  background: #DF5826 !important;
+  color: #FFFFFF !important;
+}
+
 p-dropdown.p-inputtext-sm li.p-dropdown-item {
   font-size: 0.85rem;
   padding: 0.5rem 1rem;
   text-align: center;
+}
+
+p-inputnumber span.p-inputtext-sm .p-inputnumber-button-down,
+p-inputnumber span.p-inputtext-sm .p-inputnumber-button-up {
+  padding: 0.65rem;
+  width: auto;
+}
+
+p-calendar span.p-inputtext-sm .p-datepicker-trigger {
+  padding: 0.55rem;
 }

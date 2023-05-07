@@ -1,5 +1,6 @@
 {
     "BUTTONS": {
+        "FILTER": "SEARCH",
         "COMPARE": "COMPARE",
         "LOGIN": "LOGIN",
         "SEARCH": "SEARCH"
@@ -27,6 +28,8 @@
         "WRONG_CREDENTIALS": "There are no users matching the specified credentials."
     },
     "LABELS": {
+        "APP_TITLE": "Regesta Market",
+        "AVAILABILITY": "Availability",
         "CHANGE_LANGUAGE": "Cambia lingua in italiano",
         "LOGOUT": "Logout",
         "MAIL": "Mail",
@@ -36,7 +39,8 @@
         "PRODUCTS": "products",
         "REMEMBER_ME": "Remember me",
         "SORT": "Sort",
-        "TOTAL_RECORDS": "products found"
+        "TOTAL_RECORDS": "products found",
+        "WELCOME": "Welcome on"
     },
     "MESSAGES": {
         "NO_PRODUCTS": "No results found, please try to broaden the search criteria."
@@ -49,8 +53,8 @@
     },
     "SETTINGS": {
         "APPLICATION_NAME": "RegestaMarket",
-        "DATE_FORMAT": "dd/MM/yyyy",
-        "DATETIME_FORMAT": "dd/MM/yyyy h:mm a",
+        "DATE_FORMAT": "dd/mm/yy",
+        "DATETIME_FORMAT": "dd/mm/yy h:mm a",
         "LOCALE" : "en"
     },
     "TABLES": {

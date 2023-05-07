@@ -44,5 +44,28 @@ export interface TranslatedProduct {
     code: string;
 	description?: string;
 	id: number;
+    imageUrl?: string;
 	name: string;
+}
+
+export interface PricedProduct {
+	availability: number;
+	discountedPrice?: number;
+	fullPrice?: number;
+	inactive?: boolean;
+	price: number;
+    productId: number;
+	supplierId: number;
+	shippingDays: number;
+	supplierName: string;
+}
+
+export interface Discount {
+	dateFrom: Date;
+	dateTo: Date;
+	minPieceDiscount: number;
+	percentage: number;
+	priceFrom: number;
+	priceTo: number;
+	supplierId: number;
 }

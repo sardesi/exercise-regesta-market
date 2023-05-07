@@ -34,9 +34,8 @@ public class Product extends AbstractEntity {
 	@Column(name = "CODE", unique = true, nullable = false)
 	private String code;
 
-// Defined as transient because it will be recovered by a specific service only when needed.
-	@Transient
-	private byte[] image;
+	@Column(name = "IMAGE", nullable = true)
+	private String image;
 	
 	@Override
 	public Serializable getKey() {

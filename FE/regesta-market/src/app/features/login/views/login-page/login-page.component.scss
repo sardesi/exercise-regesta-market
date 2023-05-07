@@ -2,40 +2,82 @@
 
 .login-component-container {
     
-    display: flex;
-    height: 100%;
+    height: 100vh;
     min-height: 500px;
     position: relative;
+    z-index: 1;
 
-    .main-container {
+    .background {
+        background: url(login-background.jpg);
+        filter: blur(0.5px);
+-webkit-filter: blur(0.5px);
+        opacity: .6;
+        height: 100%;
+        width: 100%;
+    }
 
+    .form-container {
+
+        background-color: #FFFFFFFF;
+        box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.8);
+-webkit-box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.8);
         margin: 0;
+        padding: 40px 40px 20px 40px;
         position: absolute;
-        top: 48%;
+        top: 50%;
         left: 50%;
-        text-align: center;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        z-index: 2;
 
-        .main-data-content {
-            
-            display: flex;
-            height: 500px;
-            padding: 0;
-            
-            .left-side {
+        .header {
 
-                background-color: $color-background-dark;
-                width: 40%;
+            position: absolute;
+            left: 15px;
+            top: 15px;
 
-            }
-            
-            .right-side {
-
-                width: 60%;
-
+            .greeter {
+                font-size: .85rem;
+                position: relative;
+                text-align: center;
+                top: 6px;
             }
 
+        }
+
+        .p-field {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .mail {
+
+            margin-top: 75px;
+
+            ::ng-deep {
+
+                i {
+                    top: 34px;
+                }
+
+            }
+        }
+
+        .password {
+
+            ::ng-deep {
+
+                .p-password,
+                .p-inputtext {
+                    width: 100%;
+                }
+                
+            }
+
+        }
+
+        .login-button {
+            margin: 20px auto;
         }
 
     }

@@ -26,7 +26,7 @@ public class ProductDao extends AbstractDao<Product> implements EntityDao<Produc
 		Session session = null;
 			
 		session = takeSession();
-		String queryString = "SELECT new com.regesta.exercise.regestamarket.model.dto.TranslatedProduct(p.id, p.code, pd.name, pd.description)"
+		String queryString = "SELECT new com.regesta.exercise.regestamarket.model.dto.TranslatedProduct(p.id, p.code, pd.name, pd.description, p.image)"
 						   + " FROM Product p LEFT OUTER JOIN ProductDictionary pd ON p.id = pd.product.id AND (pd.language = :language OR pd.language IS NULL)"
 						   + " WHERE 1=1";
 		

@@ -18,6 +18,12 @@
             width: 100%;
         }
 
+        .scroll-to-top {
+            bottom: 32px;
+            margin-left: 124px;
+            position: fixed;
+        }
+
     }
 
     .list {
@@ -71,8 +77,9 @@
 
                     img {
 
+                        aspect-ratio: 6 / 5;
                         transform: scale(.9);
-                        transition: transform 100ms;
+                        transition: transform 200ms;
                         width: 100%;
 
                     }
@@ -80,7 +87,7 @@
                     &:hover {
 
                         img {
-                            transition: transform 300ms;
+                            transition: transform 350ms;
                             transform: scale(1);
                         }
 
@@ -94,7 +101,7 @@
                     &:has(~ .animated-button:hover) {
 
                         img {
-                            transition: transform 300ms;
+                            transition: transform 350ms;
                             transform: scale(1);
                         }
                         
@@ -144,6 +151,11 @@
 
             }
 
+        }
+
+        .loadingSpinner {
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .no-products-container {

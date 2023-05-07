@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.regesta.exercise.regestamarket.model.entity.Discount;
+import com.regesta.exercise.regestamarket.model.dto.DiscountInfo;
 import com.regesta.exercise.regestamarket.service.DiscountService;
 
 import io.swagger.annotations.Api;
@@ -29,7 +29,7 @@ public class DiscountController extends BaseRestController {
 	 * @return The list of the active discounts.
 	 */
 	@GetMapping(value = "listByDate", produces="application/json")
-	public List<Discount> getDiscountByDate(@RequestParam(required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+	public List<DiscountInfo> getDiscountByDate(@RequestParam(required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
 		return discountService.getDiscountByDate(date);	
 	}
 	

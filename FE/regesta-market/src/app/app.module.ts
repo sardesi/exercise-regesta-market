@@ -6,7 +6,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { CustomHttpInterceptor } from './shared/interceptors/custom-http.interceptor';
@@ -15,6 +15,9 @@ import { LoaderService } from './shared/services/loader.service';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng-lts/api';
+
+import localeIt from '@angular/common/locales/it';
+registerLocaleData(localeIt);
 
 @NgModule({
   declarations: [
@@ -32,8 +35,8 @@ import { MessageService } from 'primeng-lts/api';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        //useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/regesta-market/fe/assets/i18n/'),
-        useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
+        useFactory: (http: HttpClient) => new TranslateHttpLoader(http, '/regesta-market/fe/assets/i18n/'),
+        //useFactory: (http: HttpClient) => new TranslateHttpLoader(http),
         deps: [HttpClient]
       },
     }),

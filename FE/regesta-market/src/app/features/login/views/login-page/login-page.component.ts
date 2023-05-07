@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
     this.hasBeenHere = this.localStorageService.get(LocalStorageService.STORAGE_HAS_BEEN_HERE) ? true : false;
 
     // TODO-MOCK: Rimuovere
-    this.user.mail = "simoneardesi@outlook.it";
-    this.user.password = "password";
+    this.user.mail = "";
+    this.user.password = "";
 
   }
 

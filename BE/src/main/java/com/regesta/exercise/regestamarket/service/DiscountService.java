@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.regesta.exercise.regestamarket.dao.DiscountDao;
-import com.regesta.exercise.regestamarket.model.dto.PricedProduct;
+import com.regesta.exercise.regestamarket.model.dto.DiscountInfo;
 import com.regesta.exercise.regestamarket.model.entity.Discount;
 
 /**
@@ -58,7 +58,7 @@ public class DiscountService {
 	 * @return The list of the active discounts.
 	 */
 	@Transactional
-	public List<Discount> getDiscountByDate(LocalDate date) {
+	public List<DiscountInfo> getDiscountByDate(LocalDate date) {
 		
 		logger.debug("DiscountService | getDiscountByDate | START  | date: {}.", date);
 		

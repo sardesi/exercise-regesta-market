@@ -60,14 +60,19 @@
         overflow-y: auto;
 
         &.logged {
+
             height: calc(100% - 95px);
+
+            .outlet {
+                max-width: 1200px;
+            }
+
         }
 
         .outlet {
 
             height: 100%;
             margin: auto;
-            max-width: 1200px;
             position: relative;
             width: 100vw;
 

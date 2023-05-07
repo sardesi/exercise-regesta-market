@@ -33,7 +33,7 @@
 
     </div>
 
-    <div class="main-layout-content" [class.logged]="showBars">
+    <div class="main-layout-content" [class.logged]="showBars()">
         
         <div class="outlet" [@translateLeftFader]="prepareOutlet(outlet)">
             <router-outlet #outlet="outlet"></router-outlet>

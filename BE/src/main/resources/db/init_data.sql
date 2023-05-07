@@ -13,118 +13,118 @@ VALUES(3, 'market.user@regestaitalia.it', '6A482F18B0CA03EE2CCFBF080E35C883', 'M
 -- PRODUCT
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(1, 'PR0M4781', NULL);
+VALUES(1, 'PR0M4781', 'https://m.media-amazon.com/images/I/71Dt2VXgxGL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(2, 'PR0M4782', NULL);
+VALUES(2, 'PR0M4782', 'https://m.media-amazon.com/images/I/71TOE0w7DzL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(3, 'PR0M4783', NULL);
+VALUES(3, 'PR0M4783', 'https://m.media-amazon.com/images/I/71I0Lrg2ikL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(4, 'PR0M4784', NULL);
+VALUES(4, 'PR0M4784', 'https://m.media-amazon.com/images/I/71r8p6wpZEL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(5, 'PR0M4785', NULL);
+VALUES(5, 'PR0M4785', 'https://m.media-amazon.com/images/I/61tbcS6tJAL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(6, 'PR0M4786', NULL);
+VALUES(6, 'PR0M4786', 'https://m.media-amazon.com/images/I/613h744wYXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(7, 'PR0M4787', NULL);
+VALUES(7, 'PR0M4787', 'https://m.media-amazon.com/images/I/61xFRHrfVJL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(8, 'PR0M4788', NULL);
+VALUES(8, 'PR0M4788', 'https://m.media-amazon.com/images/I/61N4fps8kUL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(9, 'PR0M4789', NULL);
+VALUES(9, 'PR0M4789', 'https://m.media-amazon.com/images/I/51CGX6Wr4NL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(10, 'PR0M4790', NULL);
+VALUES(10, 'PR0M4790', 'https://m.media-amazon.com/images/I/51CGX6Wr4NL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(11, 'PR0M4791', NULL);
+VALUES(11, 'PR0M4791', 'https://m.media-amazon.com/images/I/51CGX6Wr4NL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(12, 'PR0M4792', NULL);
+VALUES(12, 'PR0M4792', 'https://m.media-amazon.com/images/I/61tVrasQHmL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(13, 'PR0M4793', NULL);
+VALUES(13, 'PR0M4791', 'https://m.media-amazon.com/images/I/61lHFGmjPXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(14, 'PR0M4794', NULL);
+VALUES(14, 'PR0M4794', 'https://m.media-amazon.com/images/I/61rKbflSGwL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(15, 'PR0M4795', NULL);
+VALUES(15, 'PR0M4795', 'https://m.media-amazon.com/images/I/61lHFGmjPXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(16, 'PR0M4796', NULL);
+VALUES(16, 'PR0M4796', 'https://m.media-amazon.com/images/I/61tVrasQHmL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(17, 'PR0M4797', NULL);
+VALUES(17, 'PR0M4797', 'https://m.media-amazon.com/images/I/61lHFGmjPXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(18, 'PR0M4798', NULL);
+VALUES(18, 'PR0M4798', 'https://m.media-amazon.com/images/I/61rKbflSGwL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(19, 'PR0M4799', NULL);
+VALUES(19, 'PR0M4799', 'https://m.media-amazon.com/images/I/61lHFGmjPXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(20, 'PR0M4800', NULL);
+VALUES(20, 'PR0M4800', 'https://m.media-amazon.com/images/I/61tVrasQHmL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(21, 'PR0M4801', NULL);
+VALUES(21, 'PR0M4801', 'https://m.media-amazon.com/images/I/61lHFGmjPXL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(22, 'PR0M4802', NULL);
+VALUES(22, 'PR0M4802', 'https://m.media-amazon.com/images/I/71yhTKP4V3L._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(23, 'PR0M4803', NULL);
+VALUES(23, 'PR0M4803', 'https://m.media-amazon.com/images/I/614xgMBY7aL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(24, 'PR0M4804', NULL);
+VALUES(24, 'PR0M4804', 'https://m.media-amazon.com/images/I/71Dt2VXgxGL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(25, 'PR0M4805', NULL);
+VALUES(25, 'PR0M4805', 'https://m.media-amazon.com/images/I/71TOE0w7DzL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(26, 'PR0M4806', NULL);
+VALUES(26, 'PR0M4806', 'https://m.media-amazon.com/images/I/71hpsk5gGrL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(27, 'PR0M4807', NULL);
+VALUES(27, 'PR0M4807', 'https://m.media-amazon.com/images/I/71UH9sp5vsL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(28, 'PR0M4808', NULL);
+VALUES(28, 'PR0M4808', 'https://m.media-amazon.com/images/I/71I0Lrg2ikL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(29, 'PR0M4809', NULL);
+VALUES(29, 'PR0M4809', 'https://m.media-amazon.com/images/I/71r8p6wpZEL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(30, 'PR0M4810', NULL);
+VALUES(30, 'PR0M4810', 'https://m.media-amazon.com/images/I/71yhTKP4V3L._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(31, 'PR0M4811', NULL);
+VALUES(31, 'PR0M4811', 'https://m.media-amazon.com/images/I/614xgMBY7aL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(32, 'PR0M4812', NULL);
+VALUES(32, 'PR0M4812', 'https://m.media-amazon.com/images/I/71Dt2VXgxGL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(33, 'PR0M4813', NULL);
+VALUES(33, 'PR0M4813', 'https://m.media-amazon.com/images/I/71TOE0w7DzL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(34, 'PR0M4814', NULL);
+VALUES(34, 'PR0M4814', 'https://m.media-amazon.com/images/I/71I0Lrg2ikL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(35, 'PR0M4815', NULL);
+VALUES(35, 'PR0M4815', 'https://m.media-amazon.com/images/I/71r8p6wpZEL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(36, 'PR0M4816', NULL);
+VALUES(36, 'PR0M4816', 'https://m.media-amazon.com/images/I/71yhTKP4V3L._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(37, 'PR0M4817', NULL);
+VALUES(37, 'PR0M4817', 'https://m.media-amazon.com/images/I/614xgMBY7aL._AC_UL600_FMwebp_QL65_.jpg');
 
 INSERT INTO PRODUCT(ID, CODE, IMAGE)
-VALUES(38, 'PR0M4818', NULL);
+VALUES(38, 'PR0M4818', 'https://m.media-amazon.com/images/I/71Dt2VXgxGL._AC_UL600_FMwebp_QL65_.jpg');
 
 
 -- PRODUCT_DICTIONARY

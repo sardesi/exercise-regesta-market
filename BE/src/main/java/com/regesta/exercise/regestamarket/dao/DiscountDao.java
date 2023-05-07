@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import com.regesta.exercise.regestamarket.model.dto.DiscountInfo;
 import com.regesta.exercise.regestamarket.model.entity.Discount;
 
 /**
@@ -19,7 +20,7 @@ public class DiscountDao extends AbstractDao<Discount> implements EntityDao<Disc
 		super(entityClass);
 	}
 	
-	public List<Discount> getDiscountByDate(LocalDate date) {
+	public List<DiscountInfo> getDiscountByDate(LocalDate date) {
 		
 		Session session = null;
 			
@@ -29,7 +30,7 @@ public class DiscountDao extends AbstractDao<Discount> implements EntityDao<Disc
 						   + " WHERE d.dateFrom <= :date AND d.dateTo >= :date";
 		
 		
-		Query<Discount> query = session.createQuery(queryString, Discount.class);
+		Query<DiscountInfo> query = session.createQuery(queryString, DiscountInfo.class);
 		query.setParameter("date", date);
 		
 		return query.list();

@@ -44,29 +44,12 @@ export class AuthService {
   }
 
   public context(): Observable<MarketUser> {
-
-    let user = { 
-      id: 1,
-      mail: "simoneardesi@outlook.it", 
-      password: null,
-      name: "Simone",
-      surname: "Ardesi",
-      language: "IT"
-    };
-
-    this.setCurrentUser(user);
-
-    return of(user);
-
-    // TODO: Riabilita una volta attivata security
-
-    // return this.apiService.authGet(URL_CONTEXT, null).pipe(
-    //   map( (user: MarketUser) => {
-    //     this.setCurrentUser(user);
-    //     return user;
-    //   })
-    // );
-
+    return this.apiService.authGet(URL_CONTEXT, null).pipe(
+      map( (user: MarketUser) => {
+        this.setCurrentUser(user);
+        return user;
+      })
+    );
   }
 
   public initUser(mail: string,  password: string, rememberMe: boolean = false): Observable<MarketUser> {
