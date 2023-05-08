@@ -18,7 +18,7 @@ import io.swagger.annotations.Api;
 @RestController
 @Api(value = "Discount")
 @RequestMapping("api/discount")
-public class DiscountController extends BaseRestController {
+public class DiscountRestController extends BaseRestController {
 
 	@Autowired(required=true)
 	private DiscountService discountService;
