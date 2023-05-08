@@ -2,9 +2,11 @@
 
 Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto.
 
-# Introduzione
+# Introduzione e stack tecnologico
 
+Per realizzare il progetto ho deciso, essendo un programmatore full stack ed essendo questo un test per valutare le competenze, di realizzare una webapp utilizzando  uno stack tecnologico che mi permettesse di lavorare sia su BE, sia su FE che anche su DB. Ho quindi scelto di creare un progetto con backend basato su framework SpringBoot (java) con frontend Angular (typescript/javascript, html, css) ed un DB in memory basato su H2; nel pacchetto è presente anche un server Apache Tomcat embedded, in modo che sia utilizzabile as is. Per quanto riguarda il DB H2 ed il server Tomcat embedded non sono ovviamente scelte che farei in un ambiente di produzione, ma mi sembravano adeguate per lo scope di questo esercizio, in quanto mi permettono di rilasciare un WAR eseguibile tramite linea di comando, senza dover far installare nessun tool esterno (al netto di di una JDK java) a chi dovrà provare il pacchetto.
 
+Aggiungo anche che rispetto al testo inziale del problema ho aggiunto a quanto richiesto tre feature che vengono ormai ritenute fondamentali per una webapp: gestione dell'autenticazione, multilingua e layout responsive. Ho valutato che aggiungerle non mi sarebbe costato un grande dispendio di tempo, anche perché ho utilizzato delle facility che ho creato in passato per alcuni progetti personali e che ho dovuto solo riadattare a questo progetto ed alle nuove versioni delle tecnologie utilizzate.
 
 # Premesse
 
