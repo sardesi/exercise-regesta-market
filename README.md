@@ -43,20 +43,12 @@ Di seguito il dettaglio dei vari layer che sono stati implementati all'interno d
 
 ## DB
 
+
+
 ## BE
+
+
 
 ## FE
 
 
-
-
-# List & Links
-
-- [**testLink**](http://test.com): Test for link [TestLink2](http://test.com) .
-
-
-`test lib`
-
-```shell
-test shell command
-```
