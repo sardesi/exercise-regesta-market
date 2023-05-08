@@ -29,9 +29,13 @@ Per prima cosa è necessario scaricare ed installare la versione della JDK 17 co
 
 Una volta completata l'installazione è necessario configurare due variabili d'ambiente per far riconoscere al pc il comando necessario ad avviare l'applicativo. Andare quindi nel menu start e cercare il pannello di controllo; da lì cercare "variabili" e selezionare "modifica le variabili d'ambiente relative al sistema". Selezioanre poi il puslante "Variabili d'ambiente..." nel tab "Avanzate" e nella sezione in basso "Variabili di sistema" aggiungere una nuova variabile (se non presente, in caso modificarla) chiamata `JAVA_HOME`, con valore il percorse che punta alla home di java appena installata (di solito `C:\Program Files\Java\jdk-17`). Proseguire poi cercando sempre nella sezione "Variabili di sistema" la variabile `Path` e modificarla aggiungendo una nuova voce con valore `%JAVA_HOME%\bin`. **Attenzione** a mettere questa voce in prima posizione nella lista, in quanto voci successive potrebbero invalidare il valore inserito. Successivamente salvare ed uscire dal menu confermando le modifiche.
 
-Se tutto è andato a buon fine aprendo la console (andando nel menu start e scrivendo "cmd" e dando poi invio) e scrivendo il comando `java -version` dovrebbe rispondere con la versione 17 di java. In caso risponda con commando non riconsciuto i passaggi di cui sopra potrebbero non essere stati seguiti correttamente.
+Se tutto è andato a buon fine aprendo la console (andando nel menu start e scrivendo "cmd" e dando poi invio) e scrivendo il comando `java -version` dovrebbe rispondere con la versione 17 di java. In caso risponda con commando non riconsciuto verificare i passaggi di cui sopra.
 
 ## Avvio dell'applicativo
+
+Per avviare l'applicativo è necessario posizionarsi nella cartella che contiene il WAR, scrivere "cmd" nella barra contenete il percorso e premere invio, per aprire la console (oppure aprire la console e navigare fino alla cartella contenente il WAR). Da li sarà possibile eseguire il comando `java -jar regesta-market.war` per avviare il server applicativo che sara poi raggiungibile al link [http://localhost:8080/regesta-market/fe/](http://localhost:8080/regesta-market/fe/).
+
+**N.B.:** La porta 8080 della macchina deve essere inutilizzata, in quanto è la stessa utilzzata dal server embedded.
 
 # Dettaglio implementazioni
 
