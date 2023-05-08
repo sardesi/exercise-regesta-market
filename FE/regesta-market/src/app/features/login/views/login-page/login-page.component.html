@@ -1,0 +1,36 @@
+<div class="login-component-container">
+
+  <div class="background"></div>
+
+  <div class="form-container" (keyup.enter)="doLogin();">
+
+    <div class="header">
+      <div class="greeter">{{ 'LABELS.WELCOME' | translate }}</div>
+      <img src="assets/images/header_logo.png" width="260px"/>
+    </div>
+
+    <div class="mail p-field p-input-icon-right">
+      <div class="input-label">{{ "LABELS.MAIL" | translate }}</div>
+      <i class="pi pi-user"></i>
+      <input id="mail" type="text" pInputText class="p-inputtext-sm" placeholder="Mail" [(ngModel)]="user.mail">
+    </div>
+
+    <div class="password p-field">
+      <div class="input-label">{{ "LABELS.PASSWORD" | translate }}</div>
+      <p-password id="password" class="p-inputtext-sm" placeholder="Password" [(ngModel)]="user.password" [toggleMask]="true" [feedback]="false"></p-password>
+    </div>
+    
+    <div class="remember-me p-field-checkbox">
+      <p-checkbox binary="true" [(ngModel)]="rememberMe"></p-checkbox>
+      <span class="checkbox-label">{{ 'LABELS.REMEMBER_ME' | translate }}</span>
+    </div>
+    
+    <div class="login-button">
+      <div class="animated-button clickable" (click)="doLogin()"> <span> {{ 'BUTTONS.LOGIN' | translate }} </span> </div>
+    </div>
+
+  </div>
+
+</div>
+
+  

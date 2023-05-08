@@ -1,0 +1,235 @@
+@import "../../../../../assets/css/theme-variables.scss";
+
+.product-detail-component-container {
+
+    padding: 20px;
+
+    .product-info {
+
+        display: flex;
+        gap: 20px;
+
+        .image {
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+        .text-info {
+
+            .name {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+            .code {
+                color: #999999;
+                font-size: .8rem;
+            }
+
+            .description {
+                font-size: .9rem;
+                margin-top: 6px;
+                text-align: justify;
+            }
+
+        }
+
+    }
+
+    .filters {
+
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 12px;
+        margin-top: 20px;
+
+        .date {
+            max-width: 160px;
+            min-width: 140px;
+        }
+
+        .quantity {
+
+            max-width: 160px;
+
+            ::ng-deep {
+                .p-inputnumber-input {
+                    max-width: 82px;
+                    text-align: center;
+                }
+            }
+
+            @media(max-width: 540px) {
+    
+                max-width: 120px;
+    
+                ::ng-deep {
+                    .p-inputnumber-input {
+                        max-width: 42px;
+                        text-align: center;
+                    }
+                }
+    
+            }
+
+        }
+
+    }
+
+    .priced-products {
+
+        .product-wrapper {
+
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.4);
+        margin-bottom: 20px;
+            padding: 3px;
+
+            &.best-price {
+                background: linear-gradient(135deg, $color-primary 0%, #FFFFFF 55%, #FFFFFF 100%);
+                border: none;
+            }
+
+            &.best-availability {
+                background: linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 45%, $color-primary 100%);
+                border: none;
+            }
+
+            &.best-overall {
+                background: $color-primary;
+                border: none;
+            }
+
+        }
+
+        .product {
+
+            background: #FFFFFF;
+            border-radius: 5px;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+
+            &.inactive {
+                opacity: .3;
+            }
+
+            .price-icon {
+
+                i {
+                    font-size: 24px;
+                }
+
+            }
+
+            .price {
+
+                flex-basis: 0;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-top: 2px;
+                
+
+                .discounted-price {
+                    color: $color-text-light;
+                    display: none;
+                    font-size: .75rem;
+                    text-decoration: line-through;
+                }
+
+            }
+
+            .discounted-price {
+                flex-basis: 0;
+                flex-grow: 1;
+                color: $color-text-light;
+                font-size: .95rem;
+                margin-top: 4px;
+                text-decoration: line-through;
+            }
+
+            .availability {
+
+                flex-basis: 0;
+                flex-grow: 2;
+                font-size: .9rem;
+                margin-top: 3px;
+
+                .value {
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+            }
+
+            .supplier {
+                flex-basis: 0;
+                flex-grow: 3;
+                font-size: 1rem;
+                margin-top: 3px;
+            }
+
+            .shipping {
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-top: 2px;
+            }
+            
+            .shipping-icon {
+
+                width: 34px;
+
+                img {    
+                    position: absolute;
+                    top: 5px;
+                    width: 34px;
+                }
+                
+            }
+
+            @media(max-width: 700px) {
+
+                .price,
+                .shipping {
+
+                    font-size: 1rem;
+
+                    .discounted-price {
+                        display: block;
+                    }
+
+                }
+
+                .discounted-price {
+                    display: none;
+                }
+    
+                .supplier {
+                    font-size: .9rem;
+                    margin-top: 3px;
+                }
+
+            }
+
+            .active {
+
+                color: $color-primary;
+
+                img {
+                    filter: invert(42%) sepia(33%) saturate(2479%) hue-rotate(346deg) brightness(91%) contrast(90%);
+                }
+
+            }
+
+        }
+
+    }
+
+}

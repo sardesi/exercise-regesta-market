@@ -1,0 +1,148 @@
+@import "../../../../assets/css/theme-variables.scss";
+
+.main-layout-container {
+
+    height: 100vh;
+    position: relative;
+
+    .main-layout-header {
+
+        .head {
+
+            background: #FFFFFF;
+            display: flex;
+            height: 55px;
+            position: relative;
+            
+            .logo {
+                flex-grow: 1;
+                padding: 7px 0 1px 8px;
+            }
+
+            ::ng-deep {
+
+                .avatar {
+                    background-color: $color-background-dark;
+                    color: #ffffff;
+                    font-size: 1.2rem;
+                    position: relative;
+                    height: 2.5rem;
+                    right: 7px;
+                    top: 8px;
+                    width: 2.5rem;
+                }
+
+            }
+
+        }
+
+        .spacer {
+
+            background-color: $color-background-dark;
+            height: 40px;
+            text-align: right;
+
+            .pi {
+                color: #FFFFFF;
+                font-size: 26px;
+                margin-right: 13px;
+                position: relative;
+                top: 7px;
+            }
+
+        }
+
+    }
+
+    .main-layout-content {
+        
+        display: flex;
+        height: 100%;
+        overflow-y: auto;
+
+        &.logged {
+
+            height: calc(100% - 95px);
+
+            .outlet {
+                max-width: 1200px;
+            }
+
+        }
+
+        .outlet {
+
+            height: 100%;
+            margin: auto;
+            position: relative;
+            width: 100vw;
+
+        }
+
+    }
+
+}
+
+::ng-deep {
+
+    .userOverlay {
+
+        .p-overlaypanel-content {
+
+            padding: 16px;
+            
+            .user {
+
+                display: flex;
+                gap: 6px;
+
+                .avatar {
+                    background-color: $color-background-dark;
+                    color: #ffffff;
+                    font-size: 1.2rem;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                }
+
+                .user-info {
+
+                    margin-bottom: 14px;
+                    position: relative;
+                    top: 3px;
+
+                    .name {
+                        color: $color-text;
+                        font-size: .9rem;
+                    }
+    
+                    .mail {
+                        color: $color-text-light;
+                        font-size: .75rem;
+                    }
+                    
+                }
+
+            }
+
+            .clickable-text {
+
+                color: #0000CC;
+                cursor: pointer;
+                font-size: .8rem;
+                margin-bottom: 3px;
+                text-decoration: underline;
+                text-align: right;
+
+                .pi {
+                    position: relative;
+                    right: 2px;
+                    top: 2px;
+                }
+
+            }
+
+        }
+
+    }
+
+}

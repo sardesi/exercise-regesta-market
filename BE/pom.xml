@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.regesta.exercise</groupId>
+	<artifactId>regesta-market</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>regesta-market</name>
+	<description>A POC for an e-commerce mad as an exercise for the regesta  entry test.</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	
+	<build>
+   		<extensions>
+      		<extension>
+        		<groupId>org.apache.maven.archetype</groupId>
+        		<artifactId>archetype-packaging</artifactId>
+        		<version>3.1.1</version>
+      		</extension>
+    	</extensions> 
+		<plugins>
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                	<execution>
+                		<phase>validate</phase>
+                		<goals>
+                			<goal>exec</goal>
+                		</goals>
+                	</execution>
+                </executions>
+                <configuration>
+                    <executable>ng</executable>
+                    <workingDirectory>../FE/regesta-market</workingDirectory>
+                    <arguments>
+                    	<argument>build</argument>
+                    	<argument>--configuration=production</argument>   	
+                    	<argument>--base-href=/regesta-market/fe/</argument>		                    	
+                    </arguments>
+                </configuration>
+            </plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+		</plugins>
+		<finalName>${project.name}</finalName>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-orm</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.hibernate.orm</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-boot-starter</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+		<dependency>
+	    	<groupId>com.nimbusds</groupId>
+	    	<artifactId>nimbus-jose-jwt</artifactId>
+	    	<version>9.1.3</version>
+	    	<exclusions>
+	    		<exclusion>
+	    			<groupId>org.bouncycastle</groupId>
+	    			<artifactId>bcprov-jdk15on</artifactId>
+	    		</exclusion>
+	    	</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-jwt</artifactId>
+		    <version>1.0.7.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-math3</artifactId>
+		    <version>3.6.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>4.4</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.12.0</version>
+		</dependency>
+		
+	</dependencies>
+
+</project>

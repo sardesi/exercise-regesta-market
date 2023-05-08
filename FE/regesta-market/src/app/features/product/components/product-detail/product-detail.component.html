@@ -1,0 +1,51 @@
+<div class="product-detail-component-container">
+
+  <div class="product-info" *ngIf="product">
+
+    <div class="image">
+        <img src="{{product.imageUrl}}"/>
+    </div>
+
+    <div class="text-info">
+        <div class="name">{{product.name}}</div>
+        <div class="code">{{product.code}}</div>
+        <div class="description">{{product.description}}</div>
+    </div>
+
+  </div>
+
+  <div class="filters"  (keyup.enter)="searchPrices();">
+    <div class="search-button">
+        <p-button styleClass="p-button-sm" icon="pi pi-search" iconPos="right" [label]="'BUTTONS.SEARCH' | translate"
+                  (click)="searchPrices()"></p-button>
+    </div>
+    <div class="quantity">
+        <p-inputNumber [(ngModel)]="quantity" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal" [min]="1" [max]="999"
+                       mode="decimal" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" styleClass="p-inputtext-sm"></p-inputNumber>
+    </div>
+    <div class="date">
+        <p-calendar [(ngModel)]="date" [dateFormat]="'SETTINGS.DATE_FORMAT' | translate" [showIcon]="true"
+                    styleClass="p-inputtext-sm" appendTo="body"></p-calendar>
+    </div>
+  </div>
+
+  <p-divider></p-divider>
+
+  <div class="priced-products" *ngIf="pricedProducts && pricedProducts.length > 0">
+
+    <div class="product-wrapper" *ngFor="let product of pricedProducts" [class.best-overall]="bestPrice.id == product.supplierId && bestShipping.id == product.supplierId"
+         [class.best-price]="bestPrice.id == product.supplierId" [class.best-availability]="bestShipping.id == product.supplierId">
+      <div class="product" [class.inactive]="product.inactive">
+        <div class="price-icon" [class.active]="bestPrice.id == product.supplierId"><i class="pi pi-euro"></i></div>
+        <div class="price">{{ product.discountedPrice | number : '1.2-2' }} <div class="discounted-price" *ngIf="product.fullPrice != product.discountedPrice">{{ product.fullPrice | number : '1.2-2' }}</div></div>
+        <div class="discounted-price"><span *ngIf="product.fullPrice != product.discountedPrice">{{ product.fullPrice | number : '1.2-2' }}</span></div>
+        <div class="availability">{{ 'LABELS.AVAILABILITY' | translate }}: <span class="value">{{ product.availability }}</span></div>
+        <div class="supplier">{{ product.supplierName }}</div>
+        <div class="shipping">{{ product.shippingDays }}</div>
+        <div class="shipping-icon" [class.active]="bestShipping.id == product.supplierId"><img src="assets/icons/delivery-truck.svg"></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

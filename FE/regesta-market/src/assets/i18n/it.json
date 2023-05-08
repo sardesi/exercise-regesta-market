@@ -1,0 +1,73 @@
+{
+    "BUTTONS": {
+        "FILTER": "FILTRA",
+        "COMPARE": "CONFRONTA",
+        "LOGIN": "ACCEDI",
+        "SEARCH": "CERCA"
+    },
+    "DIALOGS": {
+        "TITLES": {
+            
+        },
+        "MESSAGES": {
+            
+        }
+    },
+    "DROPDOWNS": {
+        "PRODUCT_FILTER": {
+            "CODE": "Codice",
+            "NAME": "Nome"
+        }
+    },
+    "ERRORS": {
+        
+    },
+    "EXCEPTIONS": {
+        "UNAUTHORIZED": "L'utente non è autorizzato ad eseguire l'operazione.",
+        "UNKNOWN_LANGUAGE": "Lingua non riconosciuta.",
+        "WRONG_CREDENTIALS": "Le credenziali inserite risultano errate."
+    },
+    "LABELS": {
+        "APP_TITLE": "Regesta Market",
+        "AVAILABILITY": "Disponibilità",
+        "CHANGE_LANGUAGE": "Change language to english",
+        "LOGOUT": "Esci",
+        "MAIL": "Mail",
+        "PASSWORD": "Password",
+        "PRODUCT_CODE": "Codice del prodotto",
+        "PRODUCT_NAME": "Nome del prodotto",
+        "PRODUCTS": "prodotti",
+        "REMEMBER_ME": "Ricordami",
+        "SORT": "Ordinamento",
+        "TOTAL_RECORDS": "prodotti trovati",
+        "WELCOME": "Benveuto su"
+    },
+    "MESSAGES": {
+        "FIELDS_REQUIRED": "E' necessario inserire tutti i campi per proseguire",
+        "NO_PRODUCTS": "Nessun prodotto recuperato, prova ad ampliare i criteri di ricerca."
+    },
+    "NOTIFICATIONS": {
+
+    },
+    "NAVBAR": {
+        
+    },
+    "SETTINGS": {
+        "APPLICATION_NAME": "RegestaMarket",
+        "DATE_FORMAT": "dd/mm/yy",
+        "DATETIME_FORMAT": "dd/mm/yyyy HH:mm",
+        "LOCALE" : "it"
+    },
+    "TABLES": {
+
+    },
+    "TOAST": {
+        "ERROR_TITLE": "Si è verificato un errore",
+        "INFO_TITLE": "Attenzione",
+        "SUCCESS_TITLE": "Operazione eseguita correttamente",
+        "WARNING_TITLE": "Attenzione!"
+    },
+    "TOOLTIPS": {
+        "GITHUB": "Visualizza su GitHub"
+    }
+}

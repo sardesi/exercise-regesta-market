@@ -1,0 +1,176 @@
+@import "./theme-variables.scss" ;
+
+/* Theming */
+
+html {
+
+    height: 100%;
+
+    body {
+        background: $color-background !important;
+        color: $color-text;
+        font-family: var(--font-family);
+        font-size: .9rem;
+        margin: 0;
+    }
+
+    /* Main */
+
+    .main-container {
+
+        background: $color-background !important;
+        margin: 0 auto;
+        max-width: 1500px;
+        position: relative;
+        top: 20px;
+        width: 90vw;
+
+        .main-data {
+
+            height: auto;
+            width: 100%;
+            padding-top: 0px;
+            padding-bottom: 20px;
+
+            .main-data-header {
+                background: $color-primary;
+                height: 45px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                font-size: 19px;
+                padding: 0px 20px;
+                display: flex;
+                align-items: center;
+                box-shadow: $shadow-main-data-content;
+            }
+
+            .main-data-content {
+
+                background: $color-containers;
+                border: 1px solid $color-borders;
+                border-radius: 1px;
+                box-shadow: $shadow-main-data-content;
+                padding: 15px 20px 5px 20px;
+
+            }
+
+        }
+
+    }
+
+    .data-container {
+
+        background: $color-containers;
+        border: 1px solid $color-borders;
+        border-radius: 1px;
+        box-shadow: $shadow-main-data-content;
+
+        .header {
+            background-color: $color-card-header-background;
+            border-bottom: 1px solid $color-borders;
+            font-size: 1rem;
+            height: 20px;
+            padding: 12px 15px 9px 15px;
+        }
+
+    }
+
+    /* Custom generics */
+
+    .clickable {
+        cursor: pointer;
+    }
+
+    .full-width-form {
+        width: 100%;
+    }
+
+    .invisible {
+        visibility: hidden;
+    }
+
+    .text-ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .input-label {
+        font-size: .8rem;
+        margin-bottom: 3px;
+    }
+
+    .checkbox-label {
+        margin-left: 5px;
+    }
+
+    /* Scrollbar */
+
+    ::-webkit-scrollbar {
+        height: 7px;
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $color-disabled;
+        border-radius: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #666666;
+        border-radius: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #323232;
+        border-radius: 0px;
+    }
+
+    /* Components */
+
+    .animated-button {
+
+        background: {
+            image: linear-gradient(35deg, $color-primary 50%, rgb(255, 255, 255, .75) 50%);
+            position: 100%;
+            size: 400%;
+        }
+        border: 1.5px solid $color-primary-borders;
+        color: $color-primary;
+        cursor: pointer;
+        font-size: .9rem;
+        font-weight: 500;
+        min-width: 150px;
+        padding: 10px 20px;
+        position: relative;
+        transition: background-position 350ms ease-out, color 300ms ease-in-out;
+        text-align: center;
+        user-select: none;
+    
+        &:hover {
+            background-position: 0;
+            color: #FFFFFF;
+        }
+    
+    }
+
+}
+
+mat-spinner {
+
+    svg {
+      filter: $spinner-color-filter;
+    }
+
+}
+
+.p-sidebar {
+    background: $color-background;
+}
+
+/* Necessario per una corretta animazione del router outlet */
+
+router-outlet ~ * {
+    position: absolute;
+    width: 100%;
+}

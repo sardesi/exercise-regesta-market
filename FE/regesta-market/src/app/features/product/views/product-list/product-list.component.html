@@ -1,0 +1,79 @@
+<div class="product-list-component-container">
+
+  <div class="filters" (keyup.enter)="searchProducts();">
+
+    <div class="filter">
+        <div class="input-label">{{ 'LABELS.PRODUCT_NAME' | translate }}:</div>
+        <input class="p-inputtext-sm" type="text" pInputText [(ngModel)]="filters.name"/>
+    </div>
+
+    <div class="filter">
+        <div class="input-label">{{ 'LABELS.PRODUCT_CODE' | translate }}:</div>
+        <input class="p-inputtext-sm" type="text" pInputText [(ngModel)]="filters.code"/>
+    </div>
+
+    <div class="filter-button">
+        <p-button styleClass="p-button-sm" icon="pi pi-filter" iconPos="right" [label]="'BUTTONS.FILTER' | translate"
+                  (click)="searchProducts()"></p-button>
+    </div>
+
+    <div class="scroll-to-top" [@elementsFader]="showScrollToTop">
+        <button pButton pRipple type="button" icon="pi pi-angle-up" class="p-button-rounded p-button-outlined"
+                (click)="scrollToTop()" *ngIf="showScrollToTop"></button>
+    </div>
+
+  </div>
+
+  <div class="list" [@elementsFader]="faderTrigger">
+
+    <div class="list-header">
+
+        <div class="order">
+            <div class="input-label">{{ "LABELS.SORT" | translate }}</div>
+            <p-dropdown class="p-inputtext-sm" [options]="availableOrders" [(ngModel)]="order" optionLabel="name"
+                        (onChange)="changeOrder()"></p-dropdown>
+        </div>
+
+        <div class="total-results"><span>{{ pagination.totalRecords }}</span> {{ "LABELS.TOTAL_RECORDS" | translate }}</div>
+
+    </div>
+
+    <ng-conatiner *ngIf="!firstLoad">
+        <div class="list-content" *ngIf="pagination.totalRecords > 0; else noProducts" 
+            infinite-scroll (scrolled)="loadNextPage(true)" [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+            [infiniteScrollContainer]="'.main-layout-content'" [fromRoot]="true" [scrollWindow]="false">
+
+            <div class="product" *ngFor="let product of products">
+                <div class="image" (click)="openDetail(product)"><img src="{{product.imageUrl}}"/></div>
+                <div class="name">{{ product.name }}</div>
+                <div class="code">#{{ product.code }}</div>
+                <div class="animated-button" (click)="openDetail(product)"> <span> {{ 'BUTTONS.COMPARE' | translate }} </span> </div>
+            </div>
+
+            <!-- Necessari per sistemare l'ultima riga del flexbox -->
+            <div class="filler"></div>
+            <div class="filler"></div>
+
+        </div>
+    </ng-conatiner>
+
+    <div class="loadingSpinner" *ngIf="pagination.totalRecords != products.length && products.length > 0">
+        <p-progressSpinner strokeWidth="3" styleClass="custom-spinner"></p-progressSpinner>
+    </div>
+
+    <ng-template #noProducts>
+        <div class="no-products-container">
+            <div class="no-products">
+                <i class="pi pi-filter-slash"></i>
+                <div>{{ 'MESSAGES.NO_PRODUCTS' | translate }}</div>
+            </div>
+        </div>
+    </ng-template>
+
+  </div>
+
+</div>
+
+<p-sidebar [(visible)]="showDetail" position="right" [style]="{ maxWidth: '1000px', width: '90vw' }">
+    <product-detail *ngIf="selectedProduct" [selectedProduct]="selectedProduct"></product-detail>
+</p-sidebar>
