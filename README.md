@@ -33,13 +33,15 @@ Se tutto è andato a buon fine aprendo la console (andando nel menu start e scri
 
 ## Avvio dell'applicativo
 
-Per avviare l'applicativo è necessario posizionarsi nella cartella che contiene il WAR, scrivere "cmd" nella barra contenete il percorso e premere invio, per aprire la console (oppure aprire la console e navigare fino alla cartella contenente il WAR). Da li sarà possibile eseguire il comando `java -jar regesta-market.war` per avviare il server applicativo che sara poi raggiungibile al link [http://localhost:8080/regesta-market/fe/](http://localhost:8080/regesta-market/fe/).
+Per avviare l'applicativo è necessario posizionarsi nella cartella che contiene il WAR, scrivere "cmd" nella barra contenete il percorso e premere invio, per aprire la console (oppure aprire la console e navigare fino alla cartella contenente il WAR). Da li sarà possibile eseguire il comando `java -jar regesta-market.war` per avviare il server applicativo. Una volta completato l'avvio, quando la console visualizza la riga "*Started RegestaMarketApplication*," l'applicativo sarà raggiungibile al link [http://localhost:8080/regesta-market/fe/](http://localhost:8080/regesta-market/fe/).
 
 **N.B.:** La porta 8080 della macchina deve essere inutilizzata, in quanto è la stessa utilzzata dal server embedded.
 
+**N.B.:** Se in qualunque momento il server stesso o le chiamate danno l'impressione di essere freezati potrebbe essersi lockata la visualizzazione della console. Provare a cliccare sulla schermata della console cmd e a premere invio.
+
 ## Accesso
 
-Una volta entrati nell'applicativo sarà presentata una schermata di login. Le credenziali attualmente abilitate sono le seguenti: simoneardesi@outlook.it, silvia.cerri@regestaitalia.it, market.user@regestaitalia.it. Per tutti i precedenti la password è "password".
+Una volta entrati nell'applicativo sarà presentata una schermata di login. Le credenziali attualmente abilitate sono le seguenti: simoneardesi@outlook.it, silvia.cerri@regestaitalia.it, market.user@regestaitalia.it. Per tutti i precedenti la **password** è "password".
 
 # Dettaglio implementazioni
 
@@ -60,7 +62,9 @@ Di seguito i dettagli sulle principali funzionalità presenti nel pacchetto:
 - per quanto riguarda la sicurezza ho implementato una versione modificata di una facility che avevo creato per un progetto personale, riadattandola al sistema di security delle nuove cersioni di spring. Si basa su OAuth2.0 e utilizza un token JWT per verificare e filtrare ogni chiamata che arriva sotto root "api/\*", in modo da proteggere ogni chiamata sensibile lasciando aperte la login e le pagine del FE. In più nel token vengono salvate le informazioni dell'utente, in modo da evitare di passarlo in chiaro durante le chiamate e risolvere potenziali problemi di sicurezza in cui un utente prova ad impersonarne un altro.
 - per la login e la gestione della password ho riadattato una versione di una facility che avevo creato per un progetto personale, che si occupa di criptare la password e confrontarla con quella a DB, su cui viene salvata già criptata. Per criptarla viene usato un meccanismo che prende in inputi sia il nome utente che la stessa password decriptata, in modo che anche per chi ha l'accesso al DB ed al sistema di crypting sia impossibile risalire alla password originale.
 - per quanto rigaurda le API sono configurate tramite le funzionalità base di Spring, e sono inserite all'interno di apposite classi controller. Quest'ultime si occupano solo di ricevere la chiamata ed eventualmente validarne il contenuto, la logica vera e propria è gestita da delle classi service che recuperano i dati in input e li elabarano, utilizzando i dao per la comunicazione con il DB.
-- 
+- i test sono eseguiti tramite JUnit simulando direttamente delle chiamate ai controller, sicurezza completa, e sono presente sotto il package `src/main/java`.
+
+**N.B.**: il progetto fa utilizzo di lombok per la generazione automatica di getter e setter. Potrebbero quindi essere presenti degli errori se l'editor che si utilizza per visualizzzare il codice non ha il relativo plugin installato.
 
 **WIP**
 
