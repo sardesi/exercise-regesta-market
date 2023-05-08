@@ -2,6 +2,8 @@
 
 Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto.
 
+In caso di quasliasi problema sono a disposizione al seguente indirizzo: **simoneardesi@outlook.it**
+
 # Introduzione e stack tecnologico
 
 Per realizzare il progetto ho deciso, essendo un programmatore full stack ed essendo questo un test per valutare le competenze, di realizzare una webapp utilizzando  uno stack tecnologico che mi permettesse di lavorare sia su BE, sia su FE che anche su DB. Ho quindi scelto di creare un progetto con backend basato su framework SpringBoot (java) con frontend Angular (typescript/javascript, html, css) ed un DB in memory basato su H2; nel pacchetto è presente anche un server Apache Tomcat embedded, in modo che sia utilizzabile as is. Per quanto riguarda il DB H2 ed il server Tomcat embedded non sono ovviamente scelte che farei in un ambiente di produzione, ma mi sembravano adeguate per lo scope di questo esercizio, in quanto mi permettono di rilasciare un WAR eseguibile tramite linea di comando, senza dover far installare nessun tool esterno (al netto di di una JDK java) a chi dovrà provare il pacchetto.
@@ -17,7 +19,13 @@ Trattandosi solamente di un progetto d'esempio, e per garantire una consegna ris
 - I prodotti, i loro prezzi e le immagini sono state generate con uno certo criterio, ma comunque tramite automatismi: potrebbero quindi non essere particolarmente coerenti fra descrizione, immagine e prezzo. Oltretutto gli url delle immagini fanno riferimento a prodotti generici presenti su amazon, quindi potrebbe capitare che non siano più disponibli in base a quando verrà visionato questo progetto.
 - Mi sono fermato a quanto descritto nella richiesta, confrontando un singolo prodotto per volta, senza carrelli o confronti multipli.
 
-# Come avviare il progetto
+# Come avviare l'applicativo
+
+Per avviare il progetto le uniche necessità sono il relativo WAR (vi verrà mandato già compilato tramite WeTransfer via mail separata) e la presenza sul computer della **JDK 17, compresa la configruazione del path per quest'ultima**. Se tutto ciò è già disponibile è possibile passare direttamente alla sezione di avvio dell'applicativo, in caso contrario proseguire alla prossima sezione.
+
+## Installazione e configurazione della JDK 17
+
+## Avvio dell'applicativo
 
 # Dettaglio implementazioni
 
