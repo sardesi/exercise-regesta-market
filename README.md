@@ -60,6 +60,8 @@ Di seguito i dettagli sulle principali funzionalità presenti nel pacchetto:
 - per quanto riguarda la sicurezza ho implementato una versione modificata di una facility che avevo creato per un progetto personale, riadattandola al sistema di security delle nuove cersioni di spring. Si basa su OAuth2.0 e utilizza un token JWT per verificare e filtrare ogni chiamata che arriva sotto root "api/\*", in modo da proteggere ogni chiamata sensibile lasciando aperte la login e le pagine del FE. In più nel token vengono salvate le informazioni dell'utente, in modo da evitare di passarlo in chiaro durante le chiamate e risolvere potenziali problemi di sicurezza in cui un utente prova ad impersonarne un altro.
 - per la login e la gestione della password ho riadattato una versione di una facility che avevo creato per un progetto personale, che si occupa di criptare la password e confrontarla con quella a DB, su cui viene salvata già criptata.
 
+**WIP**
+
 ## FE
 
-
+**WIP**
