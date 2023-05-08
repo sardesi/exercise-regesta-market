@@ -66,8 +66,6 @@ Di seguito i dettagli sulle principali funzionalità presenti nel pacchetto:
 
 **N.B.**: il progetto fa utilizzo di lombok per la generazione automatica di getter e setter. Potrebbero quindi essere presenti degli errori se l'editor che si utilizza per visualizzzare il codice non ha il relativo plugin installato.
 
-**WIP**
-
 ## FE
 
 **WIP**
