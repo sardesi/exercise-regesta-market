@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { LangService } from 'src/app/shared/services/lang-service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { ToastService } from 'src/app/shared/services/toast-service';
+import StringUtils from 'src/app/shared/utils/string-utils';
 
 @Component({
   selector: 'login-page',
@@ -29,23 +30,20 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.hasBeenHere = this.localStorageService.get(LocalStorageService.STORAGE_HAS_BEEN_HERE) ? true : false;
-
-    // TODO-MOCK: Rimuovere
-    this.user.mail = "";
-    this.user.password = "";
-
   }
 
   doLogin() {
 
-    this.loading = true;
+    if(StringUtils.isEmpty(this.user.mail) || StringUtils.isEmpty(this.user.password)) {
+      this.toastService.warning("MESSAGES.FIELDS_REQUIRED");
+      return;
+    }
+
     let authObservable = this.authService.initUser(this.user.mail!, this.user.password!, this.rememberMe);
 
     authObservable.subscribe(
       user => {
-        this.loading = false;
         this.langService.setLanguage(user.language!, false);
         this.router.navigate(['/product']);
       }

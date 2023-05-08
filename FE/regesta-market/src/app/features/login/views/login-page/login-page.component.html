@@ -2,7 +2,7 @@
 
   <div class="background"></div>
 
-  <div class="form-container">
+  <div class="form-container" (keyup.enter)="doLogin();">
 
     <div class="header">
       <div class="greeter">{{ 'LABELS.WELCOME' | translate }}</div>

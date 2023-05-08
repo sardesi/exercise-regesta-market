@@ -1,6 +1,6 @@
 <div class="product-list-component-container">
 
-  <div class="filters">
+  <div class="filters" (keyup.enter)="searchProducts();">
 
     <div class="filter">
         <div class="input-label">{{ 'LABELS.PRODUCT_NAME' | translate }}:</div>

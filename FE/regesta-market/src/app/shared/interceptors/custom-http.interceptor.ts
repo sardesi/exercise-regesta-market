@@ -16,7 +16,6 @@ import { AuthService } from '../services/auth.service';
 import { ToastService } from '../services/toast-service';
 
 
-// TODO: Possibilmente spostare nell'env quando creato.
 const API_LOGIN_LINK: string = "/login/doLogin";
 const DOCUMENT_DOWNLOAD_LINK: string = "/api/documento/downloadDocumento/";
 

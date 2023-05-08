@@ -14,7 +14,7 @@
 
   </div>
 
-  <div class="filters">
+  <div class="filters"  (keyup.enter)="searchPrices();">
     <div class="search-button">
         <p-button styleClass="p-button-sm" icon="pi pi-search" iconPos="right" [label]="'BUTTONS.SEARCH' | translate"
                   (click)="searchPrices()"></p-button>

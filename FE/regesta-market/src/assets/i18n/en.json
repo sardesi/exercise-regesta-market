@@ -43,6 +43,7 @@
         "WELCOME": "Welcome on"
     },
     "MESSAGES": {
+        "FIELDS_REQUIRED": "It's mandatory to compile all the fields to continue",
         "NO_PRODUCTS": "No results found, please try to broaden the search criteria."
     },
     "NOTIFICATIONS": {

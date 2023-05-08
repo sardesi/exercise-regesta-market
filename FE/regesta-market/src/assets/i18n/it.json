@@ -43,6 +43,7 @@
         "WELCOME": "Benveuto su"
     },
     "MESSAGES": {
+        "FIELDS_REQUIRED": "E' necessario inserire tutti i campi per proseguire",
         "NO_PRODUCTS": "Nessun prodotto recuperato, prova ad ampliare i criteri di ricerca."
     },
     "NOTIFICATIONS": {

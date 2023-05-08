@@ -21,7 +21,6 @@ export class ApiService {
 
   /* GET */
 
-// TODO: una volta attivata anche a BE mettere useRoleApiUrl con default a true, poi fare un search all ed eliminare tutti gli "/api/" dalle chiamate.
   authGet(pathUrl: string, params: IAssociativeArray | null, contentType?: string | null, responseType?: string | null, useRoleApiUrl: boolean = false, noLoader: boolean = false): Observable<any> {
     return this.httpGet(pathUrl, params, true, contentType, responseType, useRoleApiUrl, noLoader);
   }
