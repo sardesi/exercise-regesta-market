@@ -6,7 +6,7 @@ In caso di quasliasi problema sono a disposizione al seguente indirizzo: simonea
 
 # Introduzione e stack tecnologico
 
-Per realizzare il progetto ho deciso, essendo un programmatore full stack ed essendo questo un test per valutare le competenze, di realizzare una webapp utilizzando  uno stack tecnologico che mi permettesse di lavorare sia su BE, sia su FE che anche su DB. Ho quindi scelto di creare un progetto con backend basato su framework SpringBoot (java) gestito tramite maven, con frontend Angular (typescript/javascript, html, css) gestito tramite node ed un DB in memory basato su H2; nel pacchetto è presente anche un server Apache Tomcat embedded, in modo che sia utilizzabile as is. Per quanto riguarda il DB H2 ed il server Tomcat embedded non sono ovviamente scelte che farei in un ambiente di produzione, ma mi sembravano adeguate per lo scope di questo esercizio, in quanto mi permettono di rilasciare un WAR eseguibile tramite linea di comando, senza dover far installare nessun tool esterno (al netto di di una JDK java) a chi dovrà provare il pacchetto.
+Per realizzare il progetto ho deciso, essendo un programmatore full stack ed essendo questo un test per valutare le competenze, di realizzare una webapp utilizzando  uno stack tecnologico che mi permettesse di lavorare sia su BE, sia su FE che anche su DB. Ho quindi scelto di creare un progetto con backend basato su framework SpringBoot (java) gestito tramite maven, con frontend Angular (typescript/javascript, html, css) gestito tramite node ed un DB in memory basato su H2; nel pacchetto è presente anche un server Apache Tomcat embedded, in modo che sia utilizzabile as is. Per quanto riguarda il DB H2 ed il server Tomcat embedded non sono ovviamente scelte che farei in un ambiente di produzione, ma mi sembravano adeguate per lo scope di questo esercizio, in quanto mi permettono di rilasciare un WAR standalone eseguibile tramite linea di comando, senza dover far installare nessun tool esterno (al netto di di una JDK java) a chi dovrà provare il pacchetto.
 
 Aggiungo anche che rispetto al testo inziale del problema ho aggiunto a quanto richiesto tre feature che vengono ormai ritenute fondamentali per una webapp: gestione dell'autenticazione, multilingua e layout responsive. Ho valutato che aggiungerle non mi sarebbe costato un grande dispendio di tempo, anche perché ho utilizzato delle facility che ho creato in passato per alcuni progetti personali e che ho dovuto solo riadattare a questo progetto ed alle nuove versioni delle tecnologie utilizzate.
 
@@ -45,7 +45,11 @@ Di seguito il dettaglio dei vari layer che sono stati implementati all'interno d
 
 Il database è utilizzato è un H2, scelto per la sua possiblità di essere instanziato in memory all'avvio dell'applicativo. L'inizializzazione avviene all'avvio di spring ed i file di configurazione che vengono eseguiti si trovano sotto `be/src/main/resources/db`.
 
+Lo stesso DB viene utilizzato anche dagli unit test.
+
 ## BE
+
+Per quanto rigurda il BE è stato utilizzata l'ultima versione di Springboot, un framework basato su Java che permette di gestire in modo nativo svariati aspetti del ciclo vitale di un applicativo. Per la gestione delle libreire e delle pipeline di build del WAR è invece stato utilizzato Maven. Nello specifico per la build del progetto maven si occupa di far partire sia la build del pacchetto BE che del pacchetto FE (configurata per convergere poi nel pacchetto BE), e generare un WAR contenete tutto il necessario per renderlo un pacchetto standalone.
 
 
 
