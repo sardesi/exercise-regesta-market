@@ -88,8 +88,15 @@ Per quanto riguarda la UX ho ipotizzato oltre alla classica pagina di login un'e
 - per quanto riguarda la schermata di login è un semplice div contente il logo e la form di autenticazione con uno sfondo ripetuto e sfocato.
 - per quanto riguarda la pagina di lista prodotti è una pagina con una dimensione massima prefissata contenente sul lato sinistro dei filtri, e sul più ampio lato destro la lista dei prodotti. <br>I filtri sono una form piuttosto semplice con position fixed e sono sempre visibili. Sempre nella sezione fixed è presente un pulsante per lo scrollToTop, la cui apparizione è legata all'ascolto di un evento sulla posizione della scrollbar. <br>La lista prodotti in se invece contiene la lista di prodotti recuperati dalla ricerca filtrata, divisi in card contenenti un'immagine animata, il nome del prodotto, il codice e un pulsante animato. Cliccando sul pulsante o sull'immagine verrà aperto il dettaglio. I prodotti non vengono caricati tutti insieme, ma vengono caricati 12 alla volta tramite l'utilizzo di un infinte scroll (offerto dalla libreria `ngx-infinite-scroll`) che viene triggerato quando ci si avvicina alla fine della pagina.
 - per quanto riguarda il dettaglio si tratta di una sidebar che viene aperta dal lato sinistro dello schermo che viene visualizzata come overlay della lista prodotti. Questa sidebar contiene un componente a se stante a cui viene passato il prodotto selezionato, e che si occupa di recuperare sconti e prezzi tramite due chiamate in parallelo. Rappresenta poi i risultati in una lista contente il prezzo, l'eventuale prezzo scontato, la quantità, il nome del fornitore ed i giorni necessari alla spedizione. Sono presenti anche dei filtri per cambiare la quantita di prodotti e la data dell'ordine. I risultati sono ordinati per prezzo, ed il prezzo i migliore ed la data di spedizione migliore vengono evidenziati sia tramite i bordi che le icone.<br>Tutti i calcoli su prezzi e scontistiche vengono effettuati in questo componente, tenendo conto del prezzo totale in base alla quantita di pezzi, del range di date dello sconto e del range di prezzi su cui è attivo lo sconto, per poi scegliere il migliore fra i disponibili. <br>Gli sconti disponibili sono 11:
-  1. Per il fornitore 
+  1. Il fornitore Tech Store BS offre uno sconto del 5% dal 01/01/2023 al 31/12/2099 per gli acquisti maggiori di 799.99 €.
+  2. Il fornitore Tech Store BS offre uno sconto del 10% dal 01/01/2023 al 31/12/2099 per gli acquisti maggiori di 799.99 € e con una quantità di almeno 30 pezzi.
+  3. Il fornitore Electronic House offre uno sconto del 5% dal 01/01/2023 al 31/12/2099 per gli acquisti maggiori o uguali a 799.99 €.
+  4. Il fornitore Electronic House offre uno sconto del 12.5% dal 01/01/2023 al 31/12/2099 per gli acquisti maggiori o uguali a 1000 €.
+  5. Il fornitore Tech Store MI offre uno sconto del 7.5% dal 01/12/2023 al 31/12/2023 per gli acquistii con una quantità di almeno 20 pezzi.
+  6. Il fornitore Tech Store MI offre uno sconto del 3% dal 01/01/2023 al 31/12/2099 per gli acquisti con una quantità di almeno 20 pezzi.
+  7. Il fornitore Mercatone Dell'Informatica offre uno sconto del 5% dal 01/01/2023 al 31/12/2099 per gli acquisti fra i 500 € ed i 1000€.
+  8. Il fornitore Mercatone Dell'Informatica offre uno sconto del 10% dal 01/01/2023 al 31/12/2099 per gli acquisti fra i 1000 € ed i 1500€.
+  9. Il fornitore Mercatone Dell'Informatica offre uno sconto del 20% dal 01/01/2023 al 31/12/2099 per gli acquisti maggiori od uguali a 1500€.
+  10. Il fornitore Black Wave Attrezzature offre sempre uno sconto del 2.5% dal 01/01/2023 al 31/12/2099.
+  11. Il fornitore Black Wave Attrezzature offre uno sconto del 50% solo il giorno 24/12/2023.
 
-
-
-** WIP **
