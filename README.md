@@ -1,6 +1,6 @@
 # Regesta Market
 
-Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto.
+Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto. In più i vari metodo del BE sono documentati da Javadoc presenti nel codice, per deformazione professionale in lingua inglese.
 
 In caso di quasliasi problema sono a disposizione al seguente indirizzo: simoneardesi@outlook.it
 
@@ -43,15 +43,18 @@ Di seguito il dettaglio dei vari layer che sono stati implementati all'interno d
 
 ## DB
 
-Il database è utilizzato è un H2, scelto per la sua possiblità di essere instanziato in memory all'avvio dell'applicativo. L'inizializzazione avviene all'avvio di spring ed i file di configurazione che vengono eseguiti si trovano sotto `be/src/main/resources/db`.
+Il database è utilizzato è un H2, scelto per la sua possiblità di essere instanziato in memory all'avvio dell'applicativo. L'inizializzazione avviene all'avvio di spring ed i file di configurazione che vengono eseguiti si trovano sotto `be/src/main/resources/db`. Lo stesso DB viene utilizzato anche dagli unit test.
 
-Lo stesso DB viene utilizzato anche dagli unit test.
+I file di configurazionedello schema sopra citato è stato semplificato per girare sotto H2, un file completo ed un immagine rappresentante lo schema del DB con tanto di collegamenti ed indici è presente sotto la cartella "DB" del progetto.
 
 ## BE
 
 Per quanto rigurda il BE è stato utilizzata l'ultima versione di Springboot, un framework basato su Java che permette di gestire in modo nativo svariati aspetti del ciclo vitale di un applicativo. Per la gestione delle libreire e delle pipeline di build del WAR è invece stato utilizzato Maven. Nello specifico per la build del progetto maven si occupa di far partire sia la build del pacchetto BE che del pacchetto FE (configurata per convergere poi nel pacchetto BE), e generare un WAR contenete tutto il necessario per renderlo un pacchetto standalone.
 
-
+Di seguito i dettagli sulle principali funzionalità presenti nel pacchetto:
+- per quanto riguarda la comunicazione con il database viene utilizzata la libreria Hibernate, che permette di configurare e gestire facilmente le connessioni con il database. Ogni tabella ha una sua entity ed un suo repository (chiamato dao), entrambe che estendono delle interfacce e delle classi astratta che tramite l'utilizzo di generics permettono di avere già a disposizione una gestione minimale del crud di ogni entity senza doverla definire da zero.
+- per quanto riguarda la sicurezza ho implementato una versione modificata di una facility che avevo creato per un progetto personale, riadattandola al sistema di security delle nuove cersioni di spring. Si basa su OAuth2.0 e utilizza un token JWT per verificare e filtrare ogni chiamata che arriva sotto root "api/\*", in modo da proteggere ogni chiamata sensibile lasciando aperte la login e le pagine del FE. In più nel token vengono salvate le informazioni dell'utente, in modo da evitare di passarlo in chiaro durante le chiamate e risolvere potenziali problemi di sicurezza in cui un utente prova ad impersonarne un altro.
+- per la login e la gestione della password ho riadattato una versione di una facility che avevo creato per un progetto personale, che si occupa di criptare la password e confrontarla con quella a DB, su cui viene salvata già criptata.
 
 ## FE
 
