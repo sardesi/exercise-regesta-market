@@ -37,6 +37,10 @@ Per avviare l'applicativo è necessario posizionarsi nella cartella che contiene
 
 **N.B.:** La porta 8080 della macchina deve essere inutilizzata, in quanto è la stessa utilzzata dal server embedded.
 
+## Accesso
+
+Una volta entrati nell'applicativo sarà presentata una schermata di login. Le credenziali attualmente abilitate sono le seguenti: simoneardesi@outlook.it, silvia.cerri@regestaitalia.it, market.user@regestaitalia.it. Per tutti i precedenti la password è "password".
+
 # Dettaglio implementazioni
 
 Di seguito il dettaglio dei vari layer che sono stati implementati all'interno del progetto.
