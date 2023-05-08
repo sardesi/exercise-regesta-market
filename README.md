@@ -2,7 +2,7 @@
 
 Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto.
 
-In caso di quasliasi problema sono a disposizione al seguente indirizzo: **simoneardesi@outlook.it**
+In caso di quasliasi problema sono a disposizione al seguente indirizzo: simoneardesi@outlook.it
 
 # Introduzione e stack tecnologico
 
@@ -21,9 +21,15 @@ Trattandosi solamente di un progetto d'esempio, e per garantire una consegna ris
 
 # Come avviare l'applicativo
 
-Per avviare il progetto le uniche necessità sono il relativo WAR (vi verrà mandato già compilato tramite WeTransfer via mail separata) e la presenza sul computer della **JDK 17, compresa la configruazione del path per quest'ultima**. Se tutto ciò è già disponibile è possibile passare direttamente alla sezione di avvio dell'applicativo, in caso contrario proseguire alla prossima sezione.
+Per avviare il progetto le uniche necessità sono il relativo WAR (vi verrà mandato già compilato tramite WeTransfer via mail separata) e la presenza sul computer della **JDK 17** (o superiore), **compresa la configruazione del path per quest'ultima**. Se tutto ciò è già disponibile è possibile passare direttamente alla sezione di avvio dell'applicativo, in caso contrario proseguire alla prossima sezione.
 
 ## Installazione e configurazione della JDK 17
+
+Per prima cosa è necessario scaricare ed installare la versione della JDK 17 compatibile con il proprio sistema operativo. La pagina di download è disponibile a [questo indirzzo](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html). 
+
+Una volta completata l'installazione è necessario configurare due variabili d'ambiente per far riconoscere al pc il comando necessario ad avviare l'applicativo. Andare quindi nel menu start e cercare il pannello di controllo; da lì cercare "variabili" e selezionare "modifica le variabili d'ambiente relative al sistema". Selezioanre poi il puslante "Variabili d'ambiente..." nel tab "Avanzate" e nella sezione in basso "Variabili di sistema" aggiungere una nuova variabile (se non presente, in caso modificarla) chiamata `JAVA_HOME`, con valore il percorse che punta alla home di java appena installata (di solito `C:\Program Files\Java\jdk-17`). Proseguire poi cercando sempre nella sezione "Variabili di sistema" la variabile `Path` e modificarla aggiungendo una nuova voce con valore `%JAVA_HOME%\bin`. **Attenzione** a mettere questa voce in prima posizione nella lista, in quanto voci successive potrebbero invalidare il valore inserito. Successivamente salvare ed uscire dal menu confermando le modifiche.
+
+Se tutto è andato a buon fine aprendo la console (andando nel menu start e scrivendo "cmd" e dando poi invio) e scrivendo il comando `java -version` dovrebbe rispondere con la versione 17 di java. In caso risponda con commando non riconsciuto i passaggi di cui sopra potrebbero non essere stati seguiti correttamente.
 
 ## Avvio dell'applicativo
 
