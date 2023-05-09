@@ -1,6 +1,6 @@
 # Regesta Market
 
-Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente l'analisi delle funzoinalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto. In più i vari metodo del BE sono documentati da Javadoc presenti nel codice, per deformazione professionale in lingua inglese.
+Regesta market è un progetto creato come risoluzione al test d'ingresso presentato in [questo documento](https://github.com/sardesi/exercise-regesta-market/blob/main/Documenti%26Utility/Test%20d'ingresso%2001%20-%20English%2C%20problem%20solving%2C%20coding%20quality%2C%20TDD.pdf). In questo readme è presente la documentazione tecnica e qualche considerazione sul progetto sviluppato. Per il manuale utente e l'analisi delle funzionalità (in formato TDD/BDD) fare riferimento alla cartella "Documenti&Utility" del progetto. In più i vari metodo del BE sono documentati da Javadoc presenti nel codice, per deformazione professionale in lingua inglese.
 
 In caso di quasliasi problema sono a disposizione al seguente indirizzo: simoneardesi@outlook.it
 
